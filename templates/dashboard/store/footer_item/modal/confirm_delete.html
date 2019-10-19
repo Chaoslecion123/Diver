@@ -1,0 +1,27 @@
+{% extends "dashboard/base_modal.html" %}
+
+{% load i18n %}
+
+{% block form_class %}{% endblock %}
+
+{% block action_url %}
+{% url "dashboard:footer-item-delete" site_settings_pk=site_settings_pk pk=footer_item.pk %}
+{% endblock %}
+
+{% block title %}
+{% blocktrans trimmed context "Modal delete bank account text" %}
+  Eliminar menu "{{ footer_item }}"
+{% endblocktrans %}
+{% endblock title %}
+
+{% block content %}
+  <div class="col s12">
+    {% blocktrans trimmed context "Modal delete bank account text" %}
+      Está seguro de querer eliminar el menu <strong>"{{ footer_item }}"</strong>?
+    {% endblocktrans %}
+  </div>
+{% endblock content %}
+
+{% block primary_action %}
+{% trans "Remove" context "Dashboard delete action" %}
+{% endblock %}

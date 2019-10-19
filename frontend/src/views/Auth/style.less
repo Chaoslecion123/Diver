@@ -1,0 +1,40 @@
+@import '~components/_styles/themes/default';
+
+@className: ~'@{diver-prefix}-view';
+
+.@{className} {
+    .@{className}__auth--content {
+        .v-content__wrap {
+            padding: 7 * @size-unit 0;
+        }
+    }
+}
+
+
+@formClassName: ~'@{diver-prefix}-form';
+
+.@{formClassName} {
+    &.@{formClassName}__auth {
+        .@{formClassName}__auth--separator {
+            vertical-align: middle;
+
+            &:after,
+            &:before {
+                content: "";
+                display: inline-block;
+                border-bottom: 1px solid rgba(0,0,0,.12);
+                width: calc(50% - 16px);
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .transparent {
+        .v-input__control {
+            .v-input__slot {
+                background: transparent;
+            }
+        }
+    }
+}
+

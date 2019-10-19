@@ -1,0 +1,177 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+{% load mptt_tags %}
+{% load materializecss %}
+{% load static %}
+{% load utils %}
+
+{% block title %}
+  {% trans "Spotlight" context "Spotlight list page title" %} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-spotlight{% endblock %}
+
+{% block menu_content_management_header_class %}active{% endblock %}
+{% block menu_storefront_scene_class %}active{% endblock %}
+
+{% block header_menu %}
+  {{ block.super }}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li>
+      <a href="{% url 'dashboard:scene-list' %}" class="breadcrumbs--ellipsed-item">
+        {% trans "Scenes" context "Dashboard scene list" %}
+      </a>
+    </li>
+    <li class="back-mobile">
+      <a href="{% url  'dashboard:scene-details' pk=scene.pk %}">
+        <svg data-src="{% static 'dashboard/images/arrow-left.svg' %}" fill="#fff" width="20px" height="20px" ></svg>
+      </a>
+    </li>
+    <li>
+      <a href="{% url  'dashboard:scene-details' pk=scene.pk %}">
+        {{ scene }}
+      </a>
+    </li>
+    <li>
+      <span class="breadcrumbs--ellipsed-item">
+        {% if spotlight.pk %}
+          {{ spotlight }}
+        {% else %}
+          {% trans "Agregar nuevo spotlight" context "Spotlight breadcrumbs" %}
+        {% endif %}
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+
+{% block custom_css %}
+<style>
+  #scene_image_wrapper {
+    display: block;
+    width: fit-content;
+    position: relative;
+  }
+
+  #scene_image_indicator {
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 0, 0, 0.25);
+    border-radius: 50%;
+    border: 1px solid #ff0000;
+    transform: translate(-50%, -50%);
+  }
+
+  #scene-image {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col m12 l9">
+      <div class="card">
+        <form action="." method="post" enctype="multipart/form-data" novalidate>
+          <div class="card-content card-content-form">
+            {% csrf_token %}
+            {{ form.scene }}
+
+            {% if form.non_field_errors %}
+              <blockquote>
+                {% for non_field_error in form.non_field_errors %}
+                  {{ non_field_error }}
+                {% endfor %}
+              </blockquote>
+            {% endif %}
+            <div class="row">
+              <div class="input input-field col s12">
+                <label>
+                  Elije un punto sobre la imagen para actualizar las coordenadas
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              {{ form.point_x|materializecss:"s6 m3 l2" }}
+              {{ form.point_y|materializecss:"s6 m3 l2" }}
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <div id="scene_image_wrapper">
+                  <img id="scene_image" src="{{ scene.image.thumbnail.400x400 }}" alt="{{ scene }}">
+                  <div id="scene_image_indicator"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              {{ form.product|materializecss:"s12 m6 l4" }}
+            </div>
+          </div>
+
+          <div class="card-action right-align">
+            <a href="{% url  'dashboard:scene-details' pk=scene.pk %}" class="btn-flat waves-effect">
+              {% trans "Cancel" context "Dashboard cancel action" %}
+            </a>
+            {% if spotlight.pk %}
+              <button type="submit" class="btn waves-effect">
+                {% trans "Update" context "Dashboard update action" %}
+              </button>
+            {% else %}
+              <button type="submit" class="btn waves-effect">
+                {% trans "Create" context "Dashboard create action" %}
+              </button>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col m12 l3 help-box"></div>
+  </div>
+{% endblock %}
+
+{% block custom_js %}
+<script>
+(function () {
+  var pointX = '50';
+  var formX = document.getElementById('id_point_x')
+  if (formX.value === "") {
+    formX.value = pointX
+  }
+
+  var pointY = '50';
+  var formY = document.getElementById('id_point_y')
+  if (formY.value === "") {
+    formY.value = pointY
+  }
+  var sceneImageIndicator = document.getElementById('scene_image_indicator');
+  sceneImageIndicator.style.top = formY.value + '%';
+  sceneImageIndicator.style.left = formX.value + '%';
+  var sceneImage = document.getElementById('scene_image');
+
+  function pointIt(event){
+    var posX = event.offsetX?(event.offsetX):event.pageX-document.getElementById('scene_image').offsetLeft;
+    var posY = event.offsetY?(event.offsetY):event.pageY-document.getElementById('scene_image').offsetTop;
+
+    posX = 100.00 * posX / 400.00;
+    posY = 100.00 * posY / 400.00;
+
+    formX.value = posX.toFixed(2).toString();
+    formY.value = posY.toFixed(2).toString();
+
+    sceneImageIndicator.style.top = formY.value + '%';
+    sceneImageIndicator.style.left = formX.value + '%';
+  }
+
+  sceneImage.addEventListener('click', pointIt)
+})()
+</script>
+{% endblock %}

@@ -1,0 +1,13 @@
+<mj-raw>
+  {% load static %}
+</mj-raw>
+<mj-section background-color="#fafafa">
+  <mj-column>
+    <mj-image src="{{ logo_url }}" height="38px" width="176px" align="left" />
+  </mj-column>
+  <mj-column>
+    <mj-button href="{{ login_url }}" background-color="#f4811f" color="#fafafa" border-radius="4px" align="right">
+      Iniciar sesión
+    </mj-button>
+  </mj-column>
+</mj-section>

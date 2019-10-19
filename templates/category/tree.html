@@ -1,0 +1,32 @@
+{% load static %}
+
+{% for node in nodes %}
+  {% with children=node.get_children %}
+    <div class="filter-section__header" style="border: 0 none;">
+      <h5 style="margin: 0;"><a href="{{ node.get_absolute_url }}" style="color: #212121;text-decoration: none;">{{ node.translated.name }}</a></h5>
+      {% if children %}
+      <div class="filter-section__icon">
+        <img class="lazyload lazypreload" data-src="{% static 'images/chevron-up.svg' %}">
+      </div>
+      {% endif %}
+    </div>
+    {% if children %}
+      <div class="filter-section__content" style="max-height: auto;padding-left: 1rem;">
+        {% include "category/tree.html" with nodes=children %}
+      </div>
+    {% endif %}
+
+    {% comment %}
+      <div class="product-filters__categories">
+        <ul class="product-filters__categories__childs no-parent">
+          <li>
+            <a href="{{ node.get_absolute_url }}">{{ node.translated.name }}</a>
+              {% if children %}
+                {% include "category/tree.html" with nodes=children %}
+              {% endif %}
+          </li>
+        </ul>
+      </div>
+    {% endcomment %}
+  {% endwith %}
+{% endfor %}

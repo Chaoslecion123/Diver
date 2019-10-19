@@ -1,0 +1,28 @@
+{% extends 'dashboard/base_zero_page.html' %}
+{% load i18n %}
+{% load static %}
+
+{% comment %}
+{% block title %}{% trans "No benefit found." %}{% endblock %}
+{% endcomment %}
+{% block title %}{% trans "No se encontraron beneficios." %}{% endblock %}
+
+{% block content %}
+  {% static "dashboard/images/add.svg" as img_path %}
+  <p>
+    {% blocktrans %}
+      Los beneficios resaltan las ventajas de comrpar en tu tienda.
+    {% endblocktrans %}
+    {% comment %}
+    Banners are engaging visual content, ideal to show our customers exciting news about our products.
+    {% endcomment %}
+  </p>
+  <p>
+    {% blocktrans %}
+      Puedes crear nuevos beneficios usando el boton <span class="btn-fab-presentation"><svg data-src="{{ img_path }}"></svg></span>.
+    {% endblocktrans %}
+    {% comment %}
+    You can create benefits by using the <span class="btn-fab-presentation"><svg data-src="{{ img_path }}"></svg></span> button.
+    {% endcomment %}
+  </p>
+{% endblock %}

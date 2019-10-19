@@ -1,0 +1,257 @@
+{% load countries %}
+{% load render_bundle from webpack_loader %}
+{% load build_absolute_uri from urls %}
+{% load get_object_properties from attributes %}
+{% load get_product_image_thumbnail from product_images %}
+{% load countries %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as selected_language %}
+{% get_language_info_list for LANGUAGES as languages %}
+{% get_countries as countries %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    {# Metadata: Site identification #}
+    <meta id="meta-site" name="uuid" content="{{ site.id }}">
+
+    {# Metadata: Payment settings #}
+    <meta id="meta-payment" name="payment" content="{{ site.settings.payment }}">
+
+    {# Metadata: Custom colors #}
+    <meta name="storefront-accent-color" content="{{ site.settings.store_accent_color }}">
+
+    {# Metadata: Countries #}
+    <meta name="meta-countries" content='[{% for code, name in countries %}{"code": "{{ code }}", "name": "{{ name }}"}{% if not forloop.last %}, {% endif %}{% endfor %}]'>
+    <meta name="meta-selected-conutry" content='{ "code": "{{ request.country.code }}", "name": "{{ request.country.name }}"}'>
+
+    {# Metadata: Language #}
+    <meta name="meta-languages" content='[{% for language in languages %}{"code": "{{ language.code|upper }}", "name": "{{ language.name_local|title }}"}{% if not forloop.last %}, {% endif %}{% endfor %}]'>
+    <meta name="meta-selected-language"content='{ "code": "{{ selected_language.code|upper }}", "name": "{{ selected_language.name_local|title }}"}'>
+
+    {# Metadata: Pages #}
+    <meta name="meta-pages" content='{ {% for special_page in site.settings.special_pages.all %}"{{ special_page.type }}": "{{ special_page.page.slug }}"{% if not forloop.last %}, {% endif %}{% endfor %} }'>
+
+    {# Metadata: Authentication backends #}
+    {% with available_backends=site.settings.available_backends %}
+      {% if available_backends %}
+          {% if 'facebook' in backends.backends and 'facebook' in available_backends %}
+            <meta id="meta-facebook-key" name="facebook-key" content="{{ site.settings.facebook_key }}">
+          {% endif %}
+          {% if 'google-oauth2' in backends.backends and 'google-oauth2' in available_backends %}
+            <meta id="meta-google-key" name="google-key" content="{{ site.settings.google_key }}">
+          {% endif %}
+      {% endif %}
+    {% endwith %}
+
+    {# Metadata: social cards #}
+    {% if product %}
+      <meta property="og:title" content="{{ product.translated.seo_title|default:product.translated.name }}">
+      <meta property="og:description" content="{{ product.translated.seo_description|default:"" }}">
+      <meta name="description" content="{{ product.translated.seo_description|default:"" }}">
+
+      {% build_absolute_uri request=request location=product.get_absolute_url as product_url %}
+      <meta property="og:url" content="{{ product_url }}">
+      <link rel="canonical" href="{{ product_url }}">
+
+      {% get_product_image_thumbnail product.get_first_image size=510 method="thumbnail" as product_image %}
+      {% if product_image %}
+        <meta property="og:image" content="{{ product_image }}" />
+        <meta property="og:image:width" content="510">
+        <meta property="og:image:height" content="510">
+      {% else %}
+        <meta property="og:image" content="{% static 'images/block1.png' %}">
+      {% endif %}
+    {% elif page %}
+      <meta property="og:title" content="{{ page.translated.seo_title|default:page.translated.title }}">
+      <meta property="og:description" content="{{ page.translated.seo_description|default:"" }}">
+      <meta name="description" content="{{ page.translated.seo_description|default:"" }}">
+
+      {% build_absolute_uri request=request location=page.get_absolute_url as page_url %}
+      <meta property="og:url" content="{{ page_url }}">
+    {% else %}
+      <meta property="og:title" content="{{ site.settings.translated.header_text }}">
+      <meta property="og:description" content="{{ site.settings.translated.description }}">
+      <meta name="description" content="{{ site.settings.translated.description }}">
+      <meta property="og:url" content="{{ request.build_absolute_uri }}">
+      <meta property="og:image" content="{% static 'images/block1.png' %}">
+    {% endif %}
+
+    <link rel="shortcut icon" href="{% static 'store/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'store/img/icons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'store/img/icons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'store/img/icons/android-chrome-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'store/img/icons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'store/manifest.json' %}">
+    <link rel="mask-icon" href="{% static 'store/safari-pinned-tab.svg' %}" color="#f58220">
+    <meta name="apple-mobile-web-app-title" content="{{ site.name }}">
+    <meta name="application-name" content="{{ site.name }}">
+    <meta name="msapplication-TileColor" content="#f58220">
+    <meta name="msapplication-TileImage" content="{% static 'store/img/icons/mstile-144x144.png' %}">
+    <meta name="msapplication-config" content="{% static 'store/browserconfig.xml' %}">
+    <meta name="theme-color" content="#f58220">
+
+    <meta name="description" content="{{ site.settings.description }}">
+    <title>{{ site.name }} | {{ site.settings.header_text }}</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=swap" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap' rel="stylesheet" type="text/css" async>
+    <style>
+      .d-page__wrapper {
+        height: 100vh;
+        width: 100% !important;
+        margin: 0;
+        /* overflow: hidden; */
+      }
+
+      .d-page__wrapper>.d-page {
+        min-height: 100vh;
+        width: 100%;
+        /* overflow: hidden; */
+      }
+
+      .spinner-wrapper {
+        font-family: "Montserrat", sans-serif;
+        height: 100%;
+        width: 100%;
+        min-height: 100vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+
+      .spinner-wrapper>.spinner {
+        position: relative;
+        height: 72px;
+        width: 72px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-animation: spinner-rotate 1.2s infinite linear;
+        animation: spinner-rotate 1.2s infinite linear;
+      }
+
+      .noscript,
+      .spinner-wrapper>.spinner-message {
+        margin-top: 16px;
+        padding: 0 8px;
+        color: #848484;
+        text-align: center;
+        max-width: 320px;
+      }
+
+      .spinner-wrapper>.spinner>.spinner-circle {
+        height: 100%;
+        -webkit-transform-origin: center center;
+            -ms-transform-origin: center center;
+                transform-origin: center center;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      .spinner-wrapper>.spinner>.spinner-circle>.spinner-circle-path {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        -webkit-animation: spinner-animate-dash 1.5s ease-in-out infinite;
+                animation: spinner-animate-dash 1.5s ease-in-out infinite;
+        stroke-linecap: round;
+        stroke: {{ site.settings.store_accent_color }};
+      }
+
+      @-webkit-keyframes spinner-rotate {
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spinner-rotate {
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+      }
+
+      @-webkit-keyframes spinner-animate-dash {
+        0% {
+          stroke-dasharray: 1, 200;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -35px;
+        }
+        100% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -124px;
+        }
+      }
+
+      @keyframes spinner-animate-dash {
+        0% {
+          stroke-dasharray: 1, 200;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -35px;
+        }
+        100% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -124px;
+        }
+      }
+    </style>
+    <noscript>
+      <style>
+        .spinner-wrapper>.spinner,
+        .spinner-wrapper>.spinner-message {
+          display: none;
+        }
+      </style>
+    </noscript>
+    {% render_bundle 'app' 'css' config='STOREFRONT' attrs='async' %}
+  </head>
+  <body class="d-page__wrapper">
+    <div id="app" class="d-page">
+      <div class="spinner-wrapper">
+        <span class="spinner">
+          <svg class="spinner-circle" viewBox="25 25 50 50">
+            <circle class="spinner-circle-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+          </svg>
+        </span>
+        <span class="spinner-message">
+          Cargando...
+        </span>
+        <noscript>
+          <div class="noscript">
+            Lo sentimos, Quimder no puede funcionar con el JavaScript deshabilitado.<br/>
+            Por favor, habilítalo para continuar.
+          </div>
+        </noscript>
+      </div>
+    </div>
+    {% csrf_token %}
+    {% render_bundle 'app' 'js' config='STOREFRONT' %}
+  </body>
+</html>

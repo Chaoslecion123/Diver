@@ -1,0 +1,27 @@
+{% extends "dashboard/base_modal.html" %}
+
+{% load i18n %}
+
+{% block form_class %}{% endblock %}
+
+{% block action_url %}
+{% url "dashboard:bank-account-delete" site_settings_pk=site_settings_pk pk=bank_account.pk %}
+{% endblock %}
+
+{% block title %}
+{% blocktrans trimmed context "Modal delete bank account text" %}
+  Delete bank account {{ bank_account }}
+{% endblocktrans %}
+{% endblock title %}
+
+{% block content %}
+  <div class="col s12">
+    {% blocktrans trimmed context "Modal delete bank account text" %}
+      Are you sure you want to remove bank account <strong>{{ bank_account }}</strong>?
+    {% endblocktrans %}
+  </div>
+{% endblock content %}
+
+{% block primary_action %}
+{% trans "Remove" context "Dashboard delete action" %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<div class="geoposition-widget input input-field col s12" data-map-widget-height="{{ widget.config.map_widget_height }}" data-map-options='{{ widget.config.map_options }}' data-marker-options='{{ widget.config.marker_options }}'>
+    {{ widget.latitude.label|capfirst }}:
+    <input type="text" name="position_0" class="geoposition" value="{{ widget.latitude.html }}" />
+    {{ widget.longitude.label|capfirst }}:
+    <input type="text" name="position_1" class="geoposition" value="{{ widget.longitude.html }}" />
+    <br/>
+</div>
+{% comment %}
+<div class="geoposition-widget row mb-0" data-map-widget-height="{{ widget.config.map_widget_height }}" data-map-options='{{ widget.config.map_options }}' data-marker-options='{{ widget.config.marker_options }}'>
+  <div class="input input-field col s6">
+    <label class="active" for="id_position_0">
+      {{ widget.latitude.label|capfirst }}:
+    </label>
+    <input type="text" id="id_position_0" name="position_0" class="geoposition" value="{{ widget.latitude.html }}" />
+  </div>
+
+  <div class="input input-field col s6">
+    <label class="active" for="id_position_1">
+      {{ widget.longitude.label|capfirst }}:
+    </label>
+    <input type="text" id="id_position_1" name="position_1" class="geoposition" value="{{ widget.longitude.html }}" />
+  </div>
+</div>
+{% endcomment %}

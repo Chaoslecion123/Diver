@@ -1,0 +1,19 @@
+{% extends 'dashboard/base_zero_page.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block menu_products_header_class %}active{% endblock %}
+{% block title %}{% trans "No brands found." %}{% endblock %}
+{% block content %}
+{% static "dashboard/images/add.svg" as img_path %}
+{% blocktrans %}
+<p>
+  Brands are used to organize products into groups that can be displayed in the navigation in the storefront or used
+  as branding links for marketing purposes.
+</p>
+<p>
+  You can create brands by using the <span class="btn-fab-presentation"><svg data-src="{{ img_path }}" ></svg></span>
+  button.
+</p>
+{% endblocktrans %}
+{% endblock %}

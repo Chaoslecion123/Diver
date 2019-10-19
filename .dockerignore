@@ -1,0 +1,8 @@
+.*
+**/*.pyc
+*.sqlite
+media
+node_modules
+frontend/node_modules
+static
+saleor/static/assets

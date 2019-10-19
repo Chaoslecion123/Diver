@@ -1,0 +1,36 @@
+<mj-section background-color="#f78322">
+  <mj-column>
+    <mj-text font-size="14px" line-height="21px" color="#fafafa" align="center">
+      Copyright © 2019
+      <a href="https://www.quimder.com" style="color:#fafafa">Quimder</a>,
+      todos Los derechos reservados.
+    </mj-text>
+  </mj-column>
+</mj-section>
+<mj-section>
+  <mj-column>
+    <mj-text font-size="14px" line-height="21px" align="center" color="#848484">
+      Este correo ha sido generado de por nuestro sistema de notificaciones,
+      por favor no responder.
+    </mj-text>
+    <mj-text font-size="14px" line-height="21px" align="center" color="#848484">
+      Para cualquier atencion escribanos a
+      <a href="mailto:ventas@boticaquimder.com" style="color:#f78322">ventas@boticaquimder.com</a>
+    </mj-text>
+  </mj-column>
+</mj-section>
+<mj-section css-class="no-display">
+  <mj-column>
+    <mj-text>
+      {% if schema_markup %}
+      <script type="application/ld+json">
+        {
+          {
+            schema_markup | safe
+          }
+        }
+      </script>
+      {% endif %}
+    </mj-text>
+  </mj-column>
+</mj-section>

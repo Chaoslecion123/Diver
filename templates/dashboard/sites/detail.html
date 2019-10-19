@@ -1,0 +1,568 @@
+{% extends 'dashboard/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+  {{ site_settings }} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-settings{% endblock %}
+
+{% block menu_settings_header_class %}active{% endblock %}
+{% block menu_settings_class %}active{% endblock %}
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li>
+      <span class="breadcrumbs--elipsed-item">
+        Site settings
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <!--
+      Basic info
+    -->
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {{ site.name }}
+          </span>
+          <div class="row">
+            <div class="col s12 m4 l12">
+              <h4>
+                {% trans "Domain" context "Site settings field" %}
+              </h4>
+              <p>
+                {{ site.domain }}
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m4 l12">
+              <h4>
+                {% trans "Header text" context "Site settings field" %}
+              </h4>
+              <p>
+                {{ site_settings.header_text }}
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m4 l12">
+              <h4>
+                {% trans "Description" context "Site settings field" %}
+              </h4>
+              <p>
+                {{ site_settings.description|default:"-" }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-action">
+          <a class="btn-flat waves-effect" href="{% url 'dashboard:site-update' pk=site_settings.pk %}">
+            {% trans "Edit site settings" context "Site settings action" %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Bank account
+    -->
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {% trans "Payment settings" context "Title of the bank accounts list" %}
+          </span>
+          <div class="row mb-0">
+            <div class="col s12">
+              <input id="id_default" name="default" class="filled-in green" type="checkbox" {% if site_settings.cash_payment_enabled %}checked="checked"{% endif %}>
+              <label for="id_default" style="pointer-events:none;">
+                {% trans "Cash payment" context "Slider list table header is active" %}
+              </label>
+            </div>
+            <div class="col s12">
+              <input id="id_active" name="active" class="filled-in green" type="checkbox" {% if site_settings.payment_against_delivery_enabled %}checked="checked"{% endif %}>
+              <label for="id_active" style="pointer-events:none;">
+                {% trans "Payment against delivery" context "Slider list table header is active" %}
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="card-action pt-0" style="border: 0;">
+          <a class="btn-flat waves-effect" href="{% url 'dashboard:site-payment-update' pk=site_settings.pk %}">
+            {% trans "Edit payment settings" context "Site settings action" %}
+          </a>
+        </div>
+        {% if site_settings.cash_payment_enabled %}
+          <div class="data-table-header-action pt-0">
+            <a href="{% url 'dashboard:bank-account-add' site_settings_pk=site_settings.pk %}" class="btn-flat waves-effect">
+              {% trans "Add bank account" %}
+            </a>
+          </div>
+          <div class="data-table-container">
+            <table class="bordered highlight responsive data-table">
+              <thead>
+                <tr>
+                  <th>
+                    {% trans "Provider" context "Header of bank accounts list" %}
+                  </th>
+                  <th>
+                    {% trans "Link" context "Header of bank accounts list" %}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for bank_account in site_settings.bank_accounts.all %}
+                  <tr>
+                    <td>{{ bank_account.provider_short_name }}</td>
+                    <td>{{ bank_account.number }}</td>
+                    <td class="right-align">
+                      <a href="{% url 'dashboard:bank-account-edit' site_settings_pk=site_settings.pk pk=bank_account.pk %}" class="btn-flat waves-effect">
+                        {% trans 'Edit' context 'Bank account edit action' %}
+                      </a>
+                      <a class="btn-flat waves-effect modal-trigger-custom" href="#base-modal" data-href="{% url 'dashboard:bank-account-delete' site_settings_pk=site_settings.pk pk=bank_account.pk %}">
+                        {% trans 'Remove' context 'Bank account remove action' %}
+                      </a>
+                    </td>
+                  </tr>
+                {% empty %}
+                  <tr>
+                    <td colspan="2">{% trans "No bank accounts" context "Empty list of bank accounts" %}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!--
+      Authorization keys
+    -->
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {% trans "Authorization keys" context "Title of the authorization keys list" %}
+          </span>
+        </div>
+        <div class="data-table-header-action">
+          <a href="{% url 'dashboard:authorization-key-add' site_settings_pk=site_settings.pk %}" class="btn-flat waves-effect">
+            {% trans "Add" %}
+          </a>
+        </div>
+        <div class="data-table-container">
+          <table class="bordered highlight responsive data-table">
+            <thead>
+              <tr>
+                <th>
+                  {% trans "Name" context "Header of authorization keys list" %}
+                </th>
+                <th>
+                  {% trans "Key" context "Header of authorization keys list" %}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for key in authorization_keys %}
+                <tr>
+                  <td>{{ key.name }}</td>
+                  <td>{{ key.key }}</td>
+                  <td class="right-align">
+                    <a href="{% url 'dashboard:authorization-key-edit' site_settings_pk=site_settings.pk key_pk=key.pk %}" class="btn-flat waves-effect">
+                      {% trans 'Edit' context 'Authorization key edit action' %}
+                    </a>
+                    <a class="btn-flat waves-effect modal-trigger-custom" href="#base-modal" data-href="{% url 'dashboard:authorization-key-delete' site_settings_pk=site_settings.pk key_pk=key.pk %}">
+                      {% trans 'Remove' context 'Authorization key remove action' %}
+                    </a>
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="2">{% trans "No authorization keys" context "Empty list of authorization keys" %}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Social networks
+    -->
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {% trans "Social networks" context "Title of the social networks list" %}
+          </span>
+        </div>
+        <div class="data-table-header-action">
+          <a href="{% url 'dashboard:social-network-add' site_settings_pk=site_settings.pk %}" class="btn-flat waves-effect">
+            {% trans "Add" %}
+          </a>
+        </div>
+        <div class="data-table-container">
+          <table class="bordered highlight responsive data-table">
+            <thead>
+              <tr>
+                <th>
+                  {% trans "Provider" context "Header of social networks list" %}
+                </th>
+                <th>
+                  {% trans "Link" context "Header of social networks list" %}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for social_network in site_settings.social_networks.all %}
+                <tr>
+                  <td>{{ social_network.provider|title }}</td>
+                  <td>{{ social_network.link }}</td>
+                  <td class="right-align">
+                    <a href="{% url 'dashboard:social-network-edit' site_settings_pk=site_settings.pk pk=social_network.pk %}" class="btn-flat waves-effect">
+                      {% trans 'Edit' context 'Authorization key edit action' %}
+                    </a>
+                    <a class="btn-flat waves-effect modal-trigger-custom" href="#base-modal" data-href="{% url 'dashboard:social-network-delete' site_settings_pk=site_settings.pk pk=social_network.pk %}">
+                      {% trans 'Remove' context 'Authorization key remove action' %}
+                    </a>
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="2">{% trans "No authorization keys" context "Empty list of authorization keys" %}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Special pages
+    -->
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {% trans "Special pages" context "Title of the special pages list" %}
+          </span>
+        </div>
+        <div class="data-table-header-action">
+          <a href="{% url 'dashboard:special-page-add' site_settings_pk=site_settings.pk %}" class="btn-flat waves-effect">
+            {% trans "Add" %}
+          </a>
+        </div>
+        <div class="data-table-container">
+          <table class="bordered highlight responsive data-table">
+            <thead>
+              <tr>
+                <th>
+                  {% trans "Type" context "Header of social networks list" %}
+                </th>
+                <th>
+                  {% trans "Page" context "Header of social networks list" %}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for special_page in site_settings.special_pages.all %}
+                <tr>
+                  <td>{{ special_page.type }}</td>
+                  <td>{{ special_page.page.title }}</td>
+                  <td class="right-align">
+                    <a href="{% url 'dashboard:special-page-edit' site_settings_pk=site_settings.pk pk=special_page.pk %}" class="btn-flat waves-effect">
+                      {% trans 'Edit' context 'Authorization key edit action' %}
+                    </a>
+                    <a class="btn-flat waves-effect modal-trigger-custom" href="#base-modal" data-href="{% url 'dashboard:special-page-delete' site_settings_pk=site_settings.pk pk=special_page.pk %}">
+                      {% trans 'Remove' context 'Authorization key remove action' %}
+                    </a>
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="2">{% trans "No special pages" context "Empty list of special pages" %}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Dashboard styles
+    -->
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {% trans "Apariencia del Panel de control" context "Site settings field" %}
+          </span>
+          <div class="row">
+            <div class="col s12 m6 l4">
+              <h4>
+                {% trans "Logo" context "Site settings field" %}
+              </h4>
+              {% if site_settings.dashboard_logo %}
+                <div>
+                  <div
+                    class="color-sample"
+                    style="background-color:{{site_settings.dashboard_header_color}};">
+                    <img
+                      src="{{ site_settings.dashboard_logo.url }}"
+                      alt="{{ site.name }}">
+                  </div>
+                </div>
+              {% else %}
+                <div class="site-settings color">
+                  <div
+                    class="color-sample"
+                    style="background-color:{{ site_settings.dashboard_header_color }};">
+                    <svg
+                      data-src="{% static 'dashboard/images/diver-logo-dashboard.svg' %}"></svg>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <h4>
+                {% trans "Colores" context "Site settings field group" %}
+              </h4>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <h6>
+                {% trans "Header" context "Site settings field" %}
+              </h6>
+              <div class="site-settings color">
+                <p class="color-text">
+                  <strong>HEX:</strong> {{ site_settings.dashboard_header_color }}
+                </p>
+                <div
+                  class="color-sample"
+                  style="background-color:{{ site_settings.dashboard_header_color }}">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <h6>
+                {% trans "Subheader" context "Site settings field" %}
+              </h6>
+              <div class="site-settings color">
+                <p class="color-text">
+                  <strong>HEX:</strong> {{ site_settings.dashboard_subheader_color }}
+                </p>
+                <div
+                  class="color-sample"
+                  style="background-color:{{ site_settings.dashboard_subheader_color }}">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <h6>
+                {% trans "Texto en el header" context "Site settings field" %}
+              </h6>
+              <div class="site-settings color">
+                <p class="color-text">
+                  <strong>HEX:</strong> {{ site_settings.dashboard_header_text_color }}
+                </p>
+                <div
+                  class="color-sample"
+                  style="background-color:{{ site_settings.dashboard_header_text_color }}">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <h6>
+                {% trans "Boton añadir" context "Site settings field" %}
+              </h6>
+              <div class="site-settings color">
+                <p class="color-text">
+                  <strong>HEX:</strong> {{ site_settings.dashboard_button_color }}
+                </p>
+                <div
+                  class="color-sample"
+                  style="background-color:{{ site_settings.dashboard_button_color }}">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-action">
+          <a class="btn-flat waves-effect" href="{% url 'dashboard:site-dashboard-update' pk=site_settings.pk %}">
+            {% trans "Editar apariencia del panel de control" context "Site settings action" %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Storefront styles
+    -->
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {% trans "Apariencia de la tienda" context "Site settings field" %}
+          </span>
+          <div class="row">
+            <div class="col s12 m6 l4">
+              <h4>
+                {% trans "Logo" context "Site settings field" %}
+              </h4>
+              {% if site_settings.store_logo %}
+                <div>
+                  <div
+                    class="color-sample"
+                    style="background-color:{{site_settings.store_header_color}};">
+                    <img
+                      src="{{ site_settings.store_logo.url }}"
+                      alt="{{ site.name }}">
+                  </div>
+                </div>
+              {% else %}
+                <div class="site-settings color">
+                  <div
+                    class="color-sample"
+                    style="background-color:{{ site_settings.store_header_color }};">
+                    <svg
+                      data-src="{% static 'dashboard/images/diver-logo-dashboard.svg' %}"></svg>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <h4>
+                {% trans "Colores" context "Site settings field group" %}
+              </h4>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <h6>
+                {% trans "Accent" context "Site settings field" %}
+              </h6>
+              <div class="site-settings color">
+                <p class="color-text">
+                  <strong>HEX:</strong> {{ site_settings.store_accent_color }}
+                </p>
+                <div
+                  class="color-sample"
+                  style="background-color:{{ site_settings.store_accent_color }}">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <h6>
+                {% trans "Header" context "Site settings field" %}
+              </h6>
+              <div class="site-settings color">
+                <p class="color-text">
+                  <strong>HEX:</strong> {{ site_settings.store_header_color }}
+                </p>
+                <div
+                  class="color-sample"
+                  style="background-color:{{ site_settings.store_header_color }}">
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m6 l3">
+              <h6>
+                {% trans "Texto en el header" context "Site settings field" %}
+              </h6>
+              <div class="site-settings color">
+                <p class="color-text">
+                  <strong>HEX:</strong> {{ site_settings.store_header_text_color }}
+                </p>
+                <div
+                  class="color-sample"
+                  style="background-color:{{ site_settings.store_header_text_color }}">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-action">
+          <a class="btn-flat waves-effect" href="{% url 'dashboard:site-store-update' pk=site_settings.pk %}">
+            {% trans "Editar apariencia de la tienda" context "Site settings action" %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Storefront footer menu
+    -->
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {% trans "Menu de la tienda al pie de página" context "Site settings field" %}
+          </span>
+        </div>
+        <div class="data-table-header-action">
+          <a href="{% url 'dashboard:footer-item-add' site_settings_pk=site_settings.pk %}" class="btn-flat waves-effect">
+            {% trans "Add" %}
+          </a>
+        </div>
+        <div class="data-table-container">
+          <table class="bordered highlight responsive data-table">
+            <thead>
+              <tr>
+                <th class="data-table-icon"></th>
+                <th>{% trans "Nombre" %}</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="sortable-items" data-post-url="{% url 'dashboard:ajax-reorder-footer-items' site_settings_pk=site_settings.pk %}" data-post-name="ordered_values">
+              {% for footer_item in site_settings.footer_items.all %}
+                <tr class="sortable-item" data-id="{{ footer_item.pk }}">
+                  <td class="data-table-icon ignore-link sortable__drag-area">
+                    <svg data-src="{% static 'dashboard/images/reorder.svg' %}" height="20" width="20" fill="#000" ></svg>
+                  </td>
+                  <td>
+                    {{ footer_item.menu.name }}
+                  </td>
+                  <td class="right-align">
+                    <a href="{% url 'dashboard:footer-item-edit' site_settings_pk=site_settings.pk pk=footer_item.pk %}" class="btn-flat waves-effect">
+                      {% trans 'Edit' context 'Attribute value edit action' %}
+                    </a>
+                    <a class="btn-flat waves-effect modal-trigger-custom" href="#base-modal" data-href="{% url 'dashboard:footer-item-delete' site_settings_pk=site_settings.pk pk=footer_item.pk  %}">
+                      {% trans 'Remove' context 'Attribute value edit action' %}
+                    </a>
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="2">{% trans "No has creado menús para este sitio" context "Empty list of attribute values" %}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

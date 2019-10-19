@@ -1,0 +1,31 @@
+.d-input {
+  &.d-input--bordered {
+    .v-input__slot {
+      border: 1px solid #b9b9b9;
+    }
+  }
+
+  &.d-input--rounded {
+    .v-input__slot {
+      border-radius: @size-unit;
+    }
+  }
+
+  &.d-input--small {
+    .v-input__control {
+      min-height: 32px;
+    }
+  }
+
+  &.d-input--hide-errors {
+    .v-text-field__details {
+      display: none;
+    }
+  }
+
+  &.d-input--transparent {
+    .v-input__slot {
+      background-color: transparent !important;
+    }
+  }
+}

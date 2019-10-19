@@ -1,0 +1,34 @@
+<mjml>
+  <mj-head>
+    <mj-include path="./shared/styles.mjml" />
+  </mj-head>
+  <mj-body>
+    <mj-raw>
+      {% load i18n %}
+    </mj-raw>
+    <mj-include path="./shared/header.mjml" />
+    <mj-section background-color="#fafafa" padding-bottom="0px">
+      <mj-column padding-bottom="0px">
+        <mj-text color="#424242" font-size="14px" font-weight="600" line-height="21px">
+          {% trans "Hi!" context "Standard e-mail greeting" %}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fafafa">
+      <mj-column padding-bottom="0px">
+        <mj-text color="#424242" font-size="14px" line-height="21px">
+          {% blocktrans trimmed context "Account delete e-mail text" %}
+          You're receiving this e-mail because you or someone else has requested a deletion of your user account at {{ domain }}.<br />
+          Click the link below to delete your account.
+
+          Please note that this action is permanent and cannot be reversed.
+          {% endblocktrans %}
+        </mj-text>
+        <mj-text color="#424242" font-size="14px" line-height="21px">
+          <a href="{{ delete_url }}" style="color:#f4811f;">{{ delete_url }}</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-include path="./shared/footer.mjml" />
+  </mj-body>
+</mjml>

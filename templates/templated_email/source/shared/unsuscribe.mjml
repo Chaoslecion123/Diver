@@ -1,0 +1,10 @@
+<mj-section background-color="#fafafa" padding="0">
+  <mj-column padding-top="0">
+    <mj-text align="center" padding="0">
+      Respetamos tu derecho a no recibir publicidad. Si no quieres recibir más información date de baja haciendo click en el enlace siguiente.
+    </mj-text>
+    <mj-text align="center">
+      <a href="mailto:ventas@boticaquimder.com">Desuscribirse</a>
+    </mj-text>
+  </mj-column>
+</mj-section>

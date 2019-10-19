@@ -1,0 +1,65 @@
+<mjml>
+  <mj-body background-color="white">
+    <mj-section background-color="#ffffff" full-width="full-width">
+      <mj-column width="33.33333333333333%" vertical-align="middle">
+        <mj-image src="logo_quimder.png" alt="OnePage" padding-bottom="0px" padding-top="10"></mj-image>
+      </mj-column>
+      <mj-column width="66.66666666666666%" vertical-align="middle">
+        <mj-text align="center" padding-bottom="0px" padding-top="10"><a style="text-decoration: none; color: inherit;">Home</a>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<a style="text-decoration: none; color: inherit;">Features</a>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <a style="text-decoration: none; color: inherit;">Portfolio</a>          </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" vertical-align="top" full-width="full-width">
+      <mj-column vertical-align="top" width="33.33333333333333%">
+        <mj-image src="piel.png" alt="" width="50px"></mj-image>
+        <mj-text align="center" color="#F78322" font-size="11px" padding-top="10"><span style="font-size: 14px; color: #e85034">Cuida tu piel</span>.</mj-text>
+      </mj-column>
+      <mj-column vertical-align="top" width="33.33333333333333%">
+        <mj-image src="delivery.png" alt="" width="50px"></mj-image>
+        <mj-text align="center" color="#F78322" font-size="11px" padding-top="10"><span style="font-size: 14px; color: #e85034"> Elige el delivery</span></mj-text>
+      </mj-column>
+      <mj-column vertical-align="top" width="33.33333333333333%">
+        <mj-image src="pago.png" alt="" width="50px"></mj-image>
+        <mj-text align="center" color="#F78322" font-size="11px"  padding-top="10"><span style="font-size: 14px; color: #e85034">Paga en efectivo </span></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column width="100%" vertical-align="middle">
+        <mj-text>Ahora recibirás nuestras mejores promociones
+
+ </mj-text>
+        <mj-image src="quimder_slider.jpg"></mj-image>
+        <mj-text align="center" font-size="14px" color="#F78322" padding-bottom="10px" padding-top="10px"><span style="font-size: 30px; line-height: 30px;">Bienvenid@ 
+          <p  style="font-size: 30px; line-height: 30px; color:#45474e;" >USER NAME</p>
+          </mj-text>
+         
+             <mj-text align="lefy" color="black" font-size="11px" padding-bottom="30px" padding-top="20"><span style="font-size: 20px; color: #F78322">¡Una nueva experiencia!</span><br><br> <span style="font-size: 14px; color:">Boticas Quimder, ahora es Quimder.com</span>
+          <p style="font-size: 14px; color:">Queremos que todos los peruan@s disfruten de nuestros más de 15 años de experiencia como líder en el mercado de farmacias especializadas en el cuidado de la piel.</p>
+        </mj-text>
+        <mj-button align="center" background-color="#F78322" color="#fff" border-radius="4px" font-size="18px" font-family="Ubuntu, Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif" padding-top="10">¡Ir a Quimder.com!</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white" vertical-align="middle" full-width="full-width">
+      <mj-column>
+        <mj-text align="center" color="black" font-size="14px" padding-bottom="20px"> También puedes comprar llamando al Fono Compras: (01) 5335887 </mj-text>
+        <mj-image src="medios_de_pago.jpg"></mj-image>
+        <mj-text align="center" color="black" font-size="14px" padding-bottom="25px">
+          <p>Cuida tu piel | Envíos Rápidos | Pago Seguro</p>
+          <p>Copyright © 2019 quimder.com, todos Los derechos reservados.</p>
+          <p>Respetamos tu derecho a no recibir Publicidad. Si no quieres recibir más información haz clic en el link de desuscripción y ya no te enviaremos. </p>
+          <p>Nuestra dirección de correo es:ventas@boticaquimder.com </p>
+          <p>Desuscribirse Modificar preferencias</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section full-width="full-width">
+      <mj-column width="100%" vertical-align="middle">
+        <mj-text align="center" font-size="11px" padding-bottom="0px" padding-top="0">
+          <p style="font-size: 14px"> Modificar preferencias</p>
+        </mj-text>
+        <mj-text align="center" font-size="11px" padding-bottom="0px" padding-top="0">
+          <p style="font-size: 14px">Desuscribirse </p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

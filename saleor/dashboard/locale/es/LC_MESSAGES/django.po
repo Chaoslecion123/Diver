@@ -1,0 +1,3124 @@
+# Saleor
+# Copyright (C) 2017 Mirumee Software
+# This file is distributed under the same license as the Saleor package.
+# Mirumee Software <hello@mirumee.com>, 2017.
+#
+# Translators:
+# Joaquín Bravo Contreras <jackbravo@gmail.com>, 2017
+# Israel Zuñiga de la Mora <israelzdlm@gmail.com>, 2017
+# Cristian Vargas <cristianvargasvalencia@gmail.com>, 2017
+# Fabiola Ampuero <fabi.ampuero.chalco@gmail.com>, 2018
+# Mario Álvarez <ahoy@m4grio.me>, 2018
+# Nicolás Pinzón <n.pinzon.hernandez@gmail.com>, 2018
+# Juan Camilo Castaño Serna <juancastano.ing@gmail.com>, 2018
+# Lautaro Araujo <lautaroarielaraujo@gmail.com>, 2018
+# Matías Saguir <mativs@gmail.com>, 2018
+# Renzo Manganiello <renzo@fmanganiello.com.ar>, 2018
+# Osmar Pérez Bautista <osmarpb.97@gmail.com>, 2018
+# Darío Vallejo Carrasco <darioinfor@gmail.com>, 2019
+# Eduardo <magallon_zepeda_carlos@hotmail.com>, 2019
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-10 18:49-0500\n"
+"PO-Revision-Date: 2017-02-09 15:43+0000\n"
+"Last-Translator: Eduardo <magallon_zepeda_carlos@hotmail.com>, 2019\n"
+"Language-Team: Spanish (https://www.transifex.com/mirumee/teams/34782/es/)\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: saleor/dashboard/brand/filters.py:9
+#: saleor/dashboard/widget/slider/filters.py:11
+#, fuzzy
+#| msgctxt "Category list sorting option"
+#| msgid "name"
+msgctxt "Brand list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/brand/filters.py:12
+#: saleor/dashboard/store/physical_store/filters.py:13
+#: saleor/dashboard/widget/banner/filters.py:13
+#: saleor/dashboard/widget/benefit/filters.py:13
+#: saleor/dashboard/widget/scene/filters.py:13
+#: saleor/dashboard/widget/slider/filters.py:14
+msgctxt "Is active filter choice"
+msgid "Yes"
+msgstr ""
+
+#: saleor/dashboard/brand/filters.py:13
+#: saleor/dashboard/store/physical_store/filters.py:14
+#: saleor/dashboard/widget/banner/filters.py:14
+#: saleor/dashboard/widget/benefit/filters.py:14
+#: saleor/dashboard/widget/scene/filters.py:14
+#: saleor/dashboard/widget/slider/filters.py:15
+#, fuzzy
+#| msgctxt "Customer note"
+#| msgid "Note"
+msgctxt "Is active filter choice"
+msgid "No"
+msgstr "Nota"
+
+#: saleor/dashboard/brand/filters.py:18
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Brand list name filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/brand/filters.py:21
+msgctxt "Brand list filter label"
+msgid "Is featured"
+msgstr ""
+
+#: saleor/dashboard/brand/filters.py:23
+#: saleor/dashboard/collection/filters.py:23
+#: saleor/dashboard/customer/filters.py:38
+#: saleor/dashboard/discount/filters.py:58
+#: saleor/dashboard/discount/filters.py:94 saleor/dashboard/order/filters.py:44
+#: saleor/dashboard/order/filters.py:51 saleor/dashboard/product/filters.py:45
+#: saleor/dashboard/store/physical_store/filters.py:24
+#: saleor/dashboard/taxes/filters.py:25
+#: saleor/dashboard/widget/banner/filters.py:24
+#: saleor/dashboard/widget/banner/filters.py:29
+#: saleor/dashboard/widget/scene/filters.py:24
+#: saleor/dashboard/widget/slider/filters.py:26
+#: saleor/dashboard/widget/slider/filters.py:31
+#: saleor/dashboard/widget/slider/filters.py:36
+msgctxt "Filter empty choice label"
+msgid "All"
+msgstr "Todos"
+
+#: saleor/dashboard/brand/filters.py:26
+#, fuzzy
+#| msgctxt "Category list sorting filter label"
+#| msgid "Sort by"
+msgctxt "Brand list sorting filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/brand/filters.py:38
+#, fuzzy, python-format
+#| msgctxt "Number of matching records in the dashboard orders list"
+#| msgid "Found %(counter)d matching order"
+#| msgid_plural "Found %(counter)d matching orders"
+msgctxt "Number of matching records in the dashboard brands list"
+msgid "Found %(counter)d matching brand"
+msgid_plural "Found %(counter)d matching brands"
+msgstr[0] "Se encontró %(counter)d pedido que coincide"
+msgstr[1] "Se encontraron %(counter)d pedidos que coinciden"
+
+#: saleor/dashboard/brand/forms.py:23 saleor/dashboard/category/forms.py:25
+#: saleor/dashboard/collection/forms.py:24
+#: saleor/dashboard/discount/forms.py:99 saleor/dashboard/product/forms.py:99
+#: saleor/dashboard/product/forms.py:263 saleor/dashboard/product/forms.py:488
+#: saleor/dashboard/sites/forms.py:52
+msgctxt "Item name"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/brand/forms.py:25
+msgctxt "Brand form"
+msgid "Brand logo"
+msgstr ""
+
+#: saleor/dashboard/brand/forms.py:27
+msgctxt "Brand form"
+msgid "Is featured"
+msgstr ""
+
+#: saleor/dashboard/brand/views.py:40
+#, fuzzy
+#| msgctxt "Dashboard message related to an customer"
+#| msgid "Added note"
+msgctxt "Brand message"
+msgid "Added brand"
+msgstr "Nota agregada"
+
+#: saleor/dashboard/brand/views.py:55
+#, fuzzy
+#| msgctxt "Sale (discount) message"
+#| msgid "Updated sale"
+msgctxt "Brand message"
+msgid "Updated brand"
+msgstr "Venta actualizada"
+
+#: saleor/dashboard/brand/views.py:75
+msgctxt "Brand message"
+msgid "Deleted brand"
+msgstr ""
+
+#: saleor/dashboard/category/filters.py:8
+msgctxt "Category list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/category/filters.py:10
+msgctxt "Category list sorting option"
+msgid "description"
+msgstr "descripción"
+
+#: saleor/dashboard/category/filters.py:15
+msgctxt "Category list filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/category/filters.py:18
+msgctxt "Category list sorting filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/category/filters.py:30
+#, python-format
+msgctxt "Number of matching records in the dashboard categories list"
+msgid "Found %(counter)d matching category"
+msgid_plural "Found %(counter)d matching categories"
+msgstr[0] "Se encontró %(counter)dcategoría"
+msgstr[1] "Se encontraron %(counter)d categorías"
+
+#: saleor/dashboard/category/forms.py:26 saleor/dashboard/product/forms.py:248
+#: saleor/dashboard/product/forms.py:437 saleor/dashboard/sites/forms.py:29
+msgctxt "Description"
+msgid "Description"
+msgstr "Descripción"
+
+#: saleor/dashboard/category/forms.py:29
+msgctxt "Category form"
+msgid "Background Image"
+msgstr "Imagen de Fondo"
+
+#: saleor/dashboard/category/forms.py:31
+msgctxt "Description of a category image"
+msgid "Image description"
+msgstr "Descripción de la imagen "
+
+#: saleor/dashboard/category/views.py:47
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added category %s"
+msgstr "Categoría añadida%s"
+
+#: saleor/dashboard/category/views.py:72
+#, python-format
+msgctxt "Dashboard message"
+msgid "Updated category %s"
+msgstr "Categoría actualizada%s"
+
+#: saleor/dashboard/category/views.py:112
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed category %s"
+msgstr "Categoría borrada %s"
+
+#: saleor/dashboard/collection/filters.py:9
+msgctxt "Collection list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/collection/filters.py:12
+#: saleor/dashboard/product/filters.py:22
+msgctxt "Is publish filter choice"
+msgid "Published"
+msgstr "Publicado"
+
+#: saleor/dashboard/collection/filters.py:13
+#: saleor/dashboard/product/filters.py:23
+msgctxt "Is publish filter choice"
+msgid "Not published"
+msgstr "Sin publicar"
+
+#: saleor/dashboard/collection/filters.py:18
+msgctxt "Collection list name filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/collection/filters.py:21
+msgctxt "Collection list filter label"
+msgid "Is published"
+msgstr "Está publicado"
+
+#: saleor/dashboard/collection/filters.py:26
+msgctxt "Collection list sorting filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/collection/filters.py:38
+#, python-format
+msgctxt "Number of matching records in the dashboard collections list"
+msgid "Found %(counter)d matching collection"
+msgid_plural "Found %(counter)d matching collections"
+msgstr[0] "Se encontró %(counter)d colección."
+msgstr[1] "Se encontraron %(counter)d colecciones"
+
+#: saleor/dashboard/collection/forms.py:18
+msgctxt "Products selection"
+msgid "Products"
+msgstr "Productos"
+
+#: saleor/dashboard/collection/forms.py:27
+msgctxt "Background image of a collection"
+msgid "Background image"
+msgstr "Imagen de fondo"
+
+#: saleor/dashboard/collection/forms.py:29
+msgctxt "Description of a collection image"
+msgid "Image description"
+msgstr "Descripción de la imagen "
+
+#: saleor/dashboard/collection/forms.py:32
+msgctxt "Collection published toggle"
+msgid "Published"
+msgstr "Publicado"
+
+#: saleor/dashboard/collection/forms.py:36
+msgctxt ""
+"The publication date field, can be a posterior date for a planned "
+"publication."
+msgid "Publication date"
+msgstr ""
+
+#: saleor/dashboard/collection/forms.py:39
+msgctxt "Description field of a collection"
+msgid "Description"
+msgstr "Descripción"
+
+#: saleor/dashboard/collection/views.py:28
+msgctxt "Dashboard message"
+msgid "Updated homepage collection"
+msgstr "Colección de la página de inicio actualizada"
+
+#: saleor/dashboard/collection/views.py:52
+msgctxt "Collection message"
+msgid "Added collection"
+msgstr "Colección agregada"
+
+#: saleor/dashboard/collection/views.py:67
+msgctxt "Collection message"
+msgid "Updated collection"
+msgstr "Colección actualizada"
+
+#: saleor/dashboard/collection/views.py:88
+msgctxt "Collection message"
+msgid "Deleted collection"
+msgstr "Colección eliminada"
+
+#: saleor/dashboard/customer/filters.py:17 saleor/dashboard/staff/filters.py:16
+msgctxt "Customer list sorting option"
+msgid "email"
+msgstr "email"
+
+#: saleor/dashboard/customer/filters.py:19 saleor/dashboard/staff/filters.py:18
+msgctxt "Customer list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/customer/filters.py:21 saleor/dashboard/staff/filters.py:20
+msgctxt "Customer list sorting option"
+msgid "location"
+msgstr "locación"
+
+#: saleor/dashboard/customer/filters.py:24
+msgctxt "Is active filter choice"
+msgid "Active"
+msgstr "Activo"
+
+#: saleor/dashboard/customer/filters.py:25
+msgctxt "Is active filter choice"
+msgid "Not active"
+msgstr "Inactivo"
+
+#: saleor/dashboard/customer/filters.py:30
+msgctxt "Customer name or email filter"
+msgid "Name or email"
+msgstr "Nombre o email"
+
+#: saleor/dashboard/customer/filters.py:33
+msgctxt "Customer list filter label"
+msgid "Location"
+msgstr "Ubicación"
+
+#: saleor/dashboard/customer/filters.py:36
+msgctxt "Customer list filter label"
+msgid "Is active"
+msgstr "Activo"
+
+#: saleor/dashboard/customer/filters.py:41
+msgctxt "Customer list filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/customer/filters.py:76
+#, python-format
+msgctxt "Number of matching records in the dashboard customers list"
+msgid "Found %(counter)d matching customer"
+msgid_plural "Found %(counter)d matching customers"
+msgstr[0] "Se encontró %(counter)d cliente que coincide"
+msgstr[1] "Se encontraron %(counter)d clientes que coinciden"
+
+#: saleor/dashboard/customer/forms.py:10
+#, python-format
+msgctxt "Customer form: Name field placeholder"
+msgid "%(name)s (Inherit from default billing address)"
+msgstr "%(name)s(Heredada de la dirección de facturación predeterminada)"
+
+#: saleor/dashboard/customer/forms.py:29
+msgctxt "Edit customer details in order form error"
+msgid ""
+"You can't delete your own account via dashboard, please try from the "
+"storefront."
+msgstr ""
+"No puedes eliminar tu cuenta desde dashboard, por favor intenta desde "
+"storefront."
+
+#: saleor/dashboard/customer/forms.py:34
+msgctxt "Edit customer details in order form error"
+msgid "Only superuser can delete his own account."
+msgstr "Solo un superusuario puede borrar esta cuenta."
+
+#: saleor/dashboard/customer/forms.py:39
+msgctxt "Edit customer details in order form error"
+msgid "You have insufficient permissions, to edit staff users."
+msgstr "No tiene suficientes permisos para editar usuarios de administrador."
+
+#: saleor/dashboard/customer/forms.py:69 saleor/dashboard/staff/forms.py:23
+msgctxt "Customer form: Given name field"
+msgid "Given name"
+msgstr "Nombre"
+
+#: saleor/dashboard/customer/forms.py:71 saleor/dashboard/staff/forms.py:25
+msgctxt "Customer form: Family name field"
+msgid "Family name"
+msgstr "Apellido"
+
+#: saleor/dashboard/customer/forms.py:73
+msgctxt "Customer form: email address field"
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: saleor/dashboard/customer/forms.py:75
+msgctxt "Customer form: customer note field"
+msgid "Notes"
+msgstr "Notas"
+
+#: saleor/dashboard/customer/forms.py:77
+msgctxt "Customer form: is active toggle"
+msgid "User is active"
+msgstr "El usuario está activo"
+
+#: saleor/dashboard/customer/forms.py:87
+msgctxt "Customer note"
+msgid "Note"
+msgstr "Nota"
+
+#: saleor/dashboard/customer/forms.py:90
+msgctxt "Allow customers to see note toggle"
+msgid "Customer can see this note"
+msgstr "El cliente puede ver esta nota"
+
+#: saleor/dashboard/customer/views.py:64
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added customer %s"
+msgstr "Se agregó %s cliente"
+
+#: saleor/dashboard/customer/views.py:81
+#, python-format
+msgctxt "Dashboard message"
+msgid "Updated customer %s"
+msgstr "Cliente %s actualizado"
+
+#: saleor/dashboard/customer/views.py:114
+msgctxt "Dashboard message related to an customer"
+msgid "Added note"
+msgstr "Nota agregada"
+
+#: saleor/dashboard/customer/views.py:135
+#, python-format
+msgctxt "Dashboard message"
+msgid "%(customer_name)s successfully removed"
+msgstr "%(customer_name)seliminado exitosamente."
+
+#: saleor/dashboard/discount/filters.py:14
+msgctxt "Sale list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/discount/filters.py:15
+msgctxt "Sale list sorting option"
+msgid "value"
+msgstr "valor"
+
+#: saleor/dashboard/discount/filters.py:16
+msgctxt "Sale list sorting option"
+msgid "start_date"
+msgstr "fecha_de_inicio"
+
+#: saleor/dashboard/discount/filters.py:17
+msgctxt "Sale list sorting option"
+msgid "end_date"
+msgstr "fecha_de_finalización"
+
+#: saleor/dashboard/discount/filters.py:20
+msgctxt "Voucher list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/discount/filters.py:22
+msgctxt "Voucher list sorting option"
+msgid "discount_value"
+msgstr "valor_del_descuento"
+
+#: saleor/dashboard/discount/filters.py:23
+msgctxt "Voucher list sorting option"
+msgid "countries"
+msgstr "Paises"
+
+#: saleor/dashboard/discount/filters.py:24
+msgctxt "Voucher list sorting option"
+msgid "start_date"
+msgstr "fecha_de_inicio"
+
+#: saleor/dashboard/discount/filters.py:25
+msgctxt "Voucher list sorting option"
+msgid "end_date"
+msgstr "fecha_de_finalización"
+
+#: saleor/dashboard/discount/filters.py:26
+msgctxt "Voucher list sorting option"
+msgid "used"
+msgstr "usado"
+
+#: saleor/dashboard/discount/filters.py:28
+msgctxt "Voucher list sorting option"
+msgid "min_amount_spent"
+msgstr ""
+
+#: saleor/dashboard/discount/filters.py:31
+msgctxt "Sale type filter choice"
+msgid "USD"
+msgstr "Dólares"
+
+#: saleor/dashboard/discount/filters.py:32
+msgctxt "Sale type filter choice"
+msgid "%"
+msgstr "%"
+
+#: saleor/dashboard/discount/filters.py:49
+msgctxt "Sale list filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/discount/filters.py:52
+msgctxt "Sale list filter label"
+msgid "Categories"
+msgstr "Categorías"
+
+#: saleor/dashboard/discount/filters.py:56
+msgctxt "Sale list filter label"
+msgid "Discount type"
+msgstr "Tipo de descuento"
+
+#: saleor/dashboard/discount/filters.py:61
+msgctxt "Sale list filter label"
+msgid "Value"
+msgstr "Valor"
+
+#: saleor/dashboard/discount/filters.py:64
+msgctxt "Sale list sorting filter label"
+msgid "Period of validity"
+msgstr "Periodo de validez"
+
+#: saleor/dashboard/discount/filters.py:68
+msgctxt "Sale list filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/discount/filters.py:80
+#, python-format
+msgctxt "Number of matching records in the dashboard sales list"
+msgid "Found %(counter)d matching sale"
+msgid_plural "Found %(counter)d matching sales"
+msgstr[0] "Se encontró%(counter)d descuento que coincide"
+msgstr[1] "Se encontraron %(counter)d descuentos que coinciden"
+
+#: saleor/dashboard/discount/filters.py:87
+msgctxt "Voucher list name filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/discount/filters.py:92
+msgctxt "Sale list is sale type filter label"
+msgid "Discount type"
+msgstr "Tipo de descuento"
+
+#: saleor/dashboard/discount/filters.py:97
+msgctxt "Sale list filter label"
+msgid "Discount_value"
+msgstr "Valor_del_descuento"
+
+#: saleor/dashboard/discount/filters.py:100
+msgctxt "Voucher list sorting filter label"
+msgid "Period of validity"
+msgstr "Periodo de validez"
+
+#: saleor/dashboard/discount/filters.py:105
+msgctxt "Voucher list sorting filter"
+msgid "Minimum amount spent"
+msgstr "Cantidad mínima gastada"
+
+#: saleor/dashboard/discount/filters.py:108
+#: saleor/dashboard/widget/banner/filters.py:32
+#: saleor/dashboard/widget/scene/filters.py:27
+#: saleor/dashboard/widget/slider/filters.py:39
+msgctxt "Voucher list sorting filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/discount/filters.py:120
+#, python-format
+msgctxt "Number of matching records in the dashboard vouchers list"
+msgid "Found %(counter)d matching voucher"
+msgid_plural "Found %(counter)d matching vouchers"
+msgstr[0] "Se encontró %(counter)d cupón que coincide"
+msgstr[1] "Se encontraron %(counter)d cupones que coinciden"
+
+#: saleor/dashboard/discount/forms.py:21
+msgctxt "Lowest value for order to be able to use the voucher"
+msgid "Apply only if the purchase value is greater than or equal to"
+msgstr "Aplica solo si el valor de compra es mayor o igual que"
+
+#: saleor/dashboard/discount/forms.py:29
+msgctxt "Discounted products"
+msgid "Discounted products"
+msgstr "Productos con descuento"
+
+#: saleor/dashboard/discount/forms.py:37
+msgctxt "Sale name"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/discount/forms.py:40
+msgctxt "Discount type"
+msgid "Fixed or percentage"
+msgstr "Fijo o por porcentaje"
+
+#: saleor/dashboard/discount/forms.py:43
+msgctxt "Sale date restrictions"
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#: saleor/dashboard/discount/forms.py:46
+msgctxt "Sale date restrictions"
+msgid "End date"
+msgstr "Fecha de finalización"
+
+#: saleor/dashboard/discount/forms.py:50
+msgctxt "Sale display type"
+msgid "Show countdown"
+msgstr ""
+
+#: saleor/dashboard/discount/forms.py:54
+msgctxt "Percentage or fixed amount value"
+msgid "Value"
+msgstr "Valor"
+
+#: saleor/dashboard/discount/forms.py:57
+msgctxt "Discounted categories"
+msgid "Discounted categories"
+msgstr "Categorías con descuento"
+
+#: saleor/dashboard/discount/forms.py:60
+msgctxt "Discounted collections"
+msgid "Discounted collections"
+msgstr "Colecciones con descuento"
+
+#: saleor/dashboard/discount/forms.py:74
+msgctxt "Sale (discount) error"
+msgid "Sale cannot exceed 100%"
+msgstr "La venta no puede superar el 100% "
+
+#: saleor/dashboard/discount/forms.py:81
+msgctxt "Sale (discount) error"
+msgid ""
+"A single sale must point to at least one product, collectionand/or category."
+msgstr ""
+"Una sola venta debe apuntar a al menos un producto, colección y / o "
+"categoría."
+
+#: saleor/dashboard/discount/forms.py:96
+msgctxt "Discount type"
+msgid "Discount type"
+msgstr "Tipo de descuento"
+
+#: saleor/dashboard/discount/forms.py:102
+msgctxt "Coupon code"
+msgid "Code"
+msgstr "Código"
+
+#: saleor/dashboard/discount/forms.py:105
+msgctxt "Usage limit"
+msgid "Usage limit"
+msgstr "Límite de uso"
+
+#: saleor/dashboard/discount/forms.py:108
+msgctxt "Voucher date restrictions"
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#: saleor/dashboard/discount/forms.py:111
+msgctxt "Voucher date restrictions"
+msgid "End date"
+msgstr "Fecha de finalización"
+
+#: saleor/dashboard/discount/forms.py:114
+msgctxt "Discount type of the voucher"
+msgid "Discount type"
+msgstr "Tipo de descuento"
+
+#: saleor/dashboard/discount/forms.py:117
+msgctxt "Discount value of the voucher"
+msgid "Discount value"
+msgstr "Valor de descuento"
+
+#: saleor/dashboard/discount/forms.py:135
+msgctxt "Text above the dropdown of countries"
+msgid "Limit countries that voucher should apply to"
+msgstr "Limitar los países a los que se debe aplicar el vale"
+
+#: saleor/dashboard/discount/forms.py:163
+msgctxt "Field label, apply discount value only once per order"
+msgid "Only apply once per order"
+msgstr "Aplicar sólo una vez por orden"
+
+#: saleor/dashboard/discount/forms.py:166
+msgctxt "Help text of checkbox for applying discount only once per order"
+msgid ""
+"If unchecked, discount value will be taken off each suitable item in an "
+"order."
+msgstr "Si deshabilita, el valor del descuento será retirado"
+
+#: saleor/dashboard/discount/forms.py:175
+msgctxt "Product"
+msgid "Products"
+msgstr "Productos"
+
+#: saleor/dashboard/discount/forms.py:194
+msgctxt "Collections"
+msgid "Collections"
+msgstr "Colecciones"
+
+#: saleor/dashboard/discount/forms.py:205
+msgctxt "Categories"
+msgid "Categories"
+msgstr "Categorías"
+
+#: saleor/dashboard/discount/views.py:56
+msgctxt "Sale (discount) message"
+msgid "Added sale"
+msgstr "Venta agregada"
+
+#: saleor/dashboard/discount/views.py:70
+msgctxt "Sale (discount) message"
+msgid "Updated sale"
+msgstr "Venta actualizada"
+
+#: saleor/dashboard/discount/views.py:84
+#, python-format
+msgctxt "Sale (discount) message"
+msgid "Removed sale %s"
+msgstr "Venta %s borrada"
+
+#: saleor/dashboard/discount/views.py:124
+msgctxt "Voucher message"
+msgid "Added voucher"
+msgstr "Cupón agregado"
+
+#: saleor/dashboard/discount/views.py:150
+msgctxt "Voucher message"
+msgid "Updated voucher"
+msgstr "Cupón actualizado"
+
+#: saleor/dashboard/discount/views.py:167
+#, python-format
+msgctxt "Voucher message"
+msgid "Removed voucher %s"
+msgstr "Cupón %s borrado"
+
+#: saleor/dashboard/menu/filters.py:9
+msgctxt "Menu list sorting option"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/menu/filters.py:12
+msgctxt "Menu item list sorting option"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/menu/filters.py:17
+msgctxt "Menu list filter label"
+msgid "Menu name"
+msgstr "Nombre del menu"
+
+#: saleor/dashboard/menu/filters.py:20
+msgctxt "Menu list filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/menu/filters.py:32
+#, python-format
+msgctxt "Number of matching records in the dashboard menus list"
+msgid "Found %(counter)d matching menu"
+msgid_plural "Found %(counter)d matching menus"
+msgstr[0] "Se encontró %(counter)d menú"
+msgstr[1] "Se encontraron %(counter)d menús"
+
+#: saleor/dashboard/menu/filters.py:39
+msgctxt "Menu item list filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/menu/filters.py:42
+msgctxt "Menu item list filter label"
+msgid "Points to"
+msgstr "Apunta a"
+
+#: saleor/dashboard/menu/filters.py:45
+msgctxt "Menu item list sorting filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/menu/filters.py:57
+#, python-format
+msgctxt "Number of matching records in the dashboard menu items list"
+msgid "Found %(counter)d matching menu item"
+msgid_plural "Found %(counter)d matching menu items"
+msgstr[0] "Se encontró %(counter)d elemento de menú"
+msgstr[1] "Se encontraron %(counter)delementos de menú"
+
+#: saleor/dashboard/menu/forms.py:27
+msgctxt "Menu name"
+msgid "Menu name"
+msgstr "Nombre del menu"
+
+#: saleor/dashboard/menu/forms.py:47
+msgctxt "Menu item object to link"
+msgid "Link"
+msgstr "Link"
+
+#: saleor/dashboard/menu/forms.py:53
+msgctxt "Menu item name"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/menu/forms.py:54
+msgctxt "Menu item url"
+msgid "URL"
+msgstr "URL"
+
+#: saleor/dashboard/menu/forms.py:70
+msgctxt "Menu item form error"
+msgid "Maximum nesting level for menu items equals to 2."
+msgstr "Máximo nivel de anidación para elementos del menu igual a 2."
+
+#: saleor/dashboard/menu/forms.py:78
+msgctxt "Menu item form error"
+msgid "A single menu item can't point to both an internal link and URL."
+msgstr "Un elemento de menu no puede apuntar a un link interno y a una URL"
+
+#: saleor/dashboard/menu/forms.py:85
+msgctxt "Menu item form error"
+msgid "A single menu item must point to an internal link or URL."
+msgstr "Un elemento de menu tiene que apuntar a un link interno o a una URL"
+
+#: saleor/dashboard/menu/utils.py:101
+#, python-format
+msgctxt "Menu item page hidden status"
+msgid ""
+"%(menu_item_name)s is hidden (will become visible on %(available_on_date)s)"
+msgstr "%(menu_item_name)s está oculto (será visible en %(available_on_date)s)"
+
+#: saleor/dashboard/menu/utils.py:109
+#, python-format
+msgctxt "Menu item published status"
+msgid "%(menu_item_name)s (Not published)"
+msgstr "%(menu_item_name)s(No publicado)"
+
+#: saleor/dashboard/menu/views.py:36
+msgctxt "Dashboard message"
+msgid "Updated storefront menus"
+msgstr "Menús de la storefront actualizados."
+
+#: saleor/dashboard/menu/views.py:53
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added menu %s"
+msgstr "Menú añadido %s"
+
+#: saleor/dashboard/menu/views.py:67
+#, python-format
+msgctxt "Dashboard message"
+msgid "Updated menu %s"
+msgstr "Menú actualizado %s"
+
+#: saleor/dashboard/menu/views.py:97
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed menu %s"
+msgstr "Menú eliminado %s"
+
+#: saleor/dashboard/menu/views.py:121
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added menu item %s"
+msgstr "Elemento de menú añadido %s"
+
+#: saleor/dashboard/menu/views.py:145
+#, python-format
+msgctxt "Dashboard message"
+msgid "Saved menu item %s"
+msgstr "Elemento del menú guardado %s"
+
+#: saleor/dashboard/menu/views.py:163
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed menu item %s"
+msgstr "Elemento del menú eliminado %s"
+
+#: saleor/dashboard/menu/views.py:249
+msgctxt "Link object type group description"
+msgid "Collection"
+msgstr "Colección"
+
+#: saleor/dashboard/menu/views.py:254
+msgctxt "Link object type group description"
+msgid "Category"
+msgstr "Categoría"
+
+#: saleor/dashboard/menu/views.py:259
+msgctxt "Link object type group description"
+msgid "Page"
+msgstr "Página"
+
+#: saleor/dashboard/order/filters.py:22
+msgctxt "Order list sorting option"
+msgid "#"
+msgstr "#"
+
+#: saleor/dashboard/order/filters.py:24
+msgctxt "Order list sorting option"
+msgid "payment"
+msgstr "Pago"
+
+#: saleor/dashboard/order/filters.py:25
+msgctxt "Order list sorting option"
+msgid "email"
+msgstr "email"
+
+#: saleor/dashboard/order/filters.py:26 saleor/dashboard/order/filters.py:27
+msgctxt "Order list sorting option"
+msgid "created"
+msgstr "creada"
+
+#: saleor/dashboard/order/filters.py:32
+msgctxt "Order list filter label"
+msgid "ID"
+msgstr "ID"
+
+#: saleor/dashboard/order/filters.py:35
+msgctxt "Order list filter label"
+msgid "Customer name or email"
+msgstr "Nombre o email del cliente"
+
+#: saleor/dashboard/order/filters.py:38
+msgctxt "Order list filter label"
+msgid "Placed on"
+msgstr "Realizado el"
+
+#: saleor/dashboard/order/filters.py:42
+msgctxt "Order list filter label"
+msgid "Order status"
+msgstr "Estado del pedido"
+
+#: saleor/dashboard/order/filters.py:47
+msgctxt "Order list filter label"
+msgid "Payment status"
+msgstr "Estado del Pago"
+
+#: saleor/dashboard/order/filters.py:54
+msgctxt "Order list filter label"
+msgid "Total"
+msgstr "Total"
+
+#: saleor/dashboard/order/filters.py:57
+msgctxt "Order list filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/order/filters.py:88
+#, python-format
+msgctxt "Number of matching records in the dashboard orders list"
+msgid "Found %(counter)d matching order"
+msgid_plural "Found %(counter)d matching orders"
+msgstr[0] "Se encontró %(counter)d pedido que coincide"
+msgstr[1] "Se encontraron %(counter)d pedidos que coinciden"
+
+#: saleor/dashboard/order/forms.py:37
+msgctxt "Send email to customer about order created by staff users"
+msgid "Send email with order confirmation to the customer"
+msgstr "Enviar correo electrónico con confirmación de pedido al cliente"
+
+#: saleor/dashboard/order/forms.py:55
+msgctxt "Create draft order form error"
+msgid "Could not create order without any products"
+msgstr "No se puede crear una orden sin productos"
+
+#: saleor/dashboard/order/forms.py:65
+msgctxt "Create draft order form error"
+msgid "Shipping method is not valid for chosen shipping address"
+msgstr "El método de envío no es válido para la dirección de envío elegida"
+
+#: saleor/dashboard/order/forms.py:93
+msgctxt "Update an order with user default addresses"
+msgid "Set billing and shipping address in order to customer defaults"
+msgstr ""
+"Establezca la dirección de facturación y envío para los valores "
+"predeterminados del cliente"
+
+#: saleor/dashboard/order/forms.py:101
+msgctxt "Order form: editing customer details - selecting a customer"
+msgid "Customer"
+msgstr "Cliente"
+
+#: saleor/dashboard/order/forms.py:109
+msgctxt "Order customer email"
+msgid "Email"
+msgstr "Email"
+
+#: saleor/dashboard/order/forms.py:124
+msgctxt "Edit customer details in order form error"
+msgid ""
+"An order can be related either with an email or an existing user account"
+msgstr ""
+"Un pedido puede estar ralacionado con un correo electrónico o con una cuenta "
+"de usuario existente"
+
+#: saleor/dashboard/order/forms.py:152
+msgctxt "Shipping method form field label"
+msgid "Shipping method"
+msgstr "Método de envío"
+
+#: saleor/dashboard/order/forms.py:209
+msgctxt "Order discount amount fixed value"
+msgid "Discount amount"
+msgstr "Importe de descuento"
+
+#: saleor/dashboard/order/forms.py:221
+msgctxt "Order voucher"
+msgid "Voucher"
+msgstr "Cupón"
+
+#: saleor/dashboard/order/forms.py:249
+msgctxt "Order note"
+msgid "Note"
+msgstr "Nota"
+
+#: saleor/dashboard/order/forms.py:256
+msgctxt "Payment management form (capture, refund, void)"
+msgid "Amount"
+msgstr "Cantidad"
+
+#: saleor/dashboard/order/forms.py:262
+msgctxt "Payment form error"
+msgid "This payment action can not be performed."
+msgstr ""
+
+#: saleor/dashboard/order/forms.py:271
+#, python-format
+msgctxt "Payment form error"
+msgid "Payment gateway error: %s"
+msgstr "Error de pago saliente: %s"
+
+#: saleor/dashboard/order/forms.py:290
+msgctxt "Payment form error"
+msgid "Only pre-authorized payments can be captured"
+msgstr "Solo pagos pre autorizados pueden ser capturados"
+
+#: saleor/dashboard/order/forms.py:305
+msgctxt "Payment form error"
+msgid "Only confirmed payments can be refunded"
+msgstr "Solo pagos confirmados pueden reembolsarse"
+
+#: saleor/dashboard/order/forms.py:315
+msgctxt "Payment form error"
+msgid "Manual payments can not be refunded"
+msgstr "Los pagos manuales no pueden ser reembolsados"
+
+#: saleor/dashboard/order/forms.py:326
+msgctxt "Payment form error"
+msgid "Only pre-authorized payments can be voided"
+msgstr "Sólo los pagos pre-autorizados pueden ser anulados"
+
+#: saleor/dashboard/order/forms.py:379
+msgctxt "Integer number"
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: saleor/dashboard/order/forms.py:398
+#, python-format
+msgctxt "Change quantity form error"
+msgid "Only %(remaining)d remaining in stock."
+msgid_plural "Only %(remaining)d remaining in stock."
+msgstr[0] "Solo quedan %(remaining)d en stock."
+msgstr[1] "Solo quedan %(remaining)d en stock."
+
+#: saleor/dashboard/order/forms.py:431
+#, python-format
+msgctxt "Cancel order form action"
+msgid "Restock %(quantity)d item"
+msgid_plural "Restock %(quantity)d items"
+msgstr[0] "Reabastecer %(quantity)d elemento"
+msgstr[1] "Reabastecer %(quantity)d elementos"
+
+#: saleor/dashboard/order/forms.py:441
+msgctxt "Cancel order form error"
+msgid "This order can't be canceled"
+msgstr "Este pedido no puede ser cancelado"
+
+#: saleor/dashboard/order/forms.py:461
+#, python-format
+msgctxt "Cancel fulfillment form action"
+msgid "Restock %(quantity)d item"
+msgid_plural "Restock %(quantity)d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: saleor/dashboard/order/forms.py:471
+msgctxt "Cancel fulfillment form error"
+msgid "This fulfillment can't be canceled"
+msgstr "Este envío no puede ser cancelado. "
+
+#: saleor/dashboard/order/forms.py:485
+msgctxt "Send mail to customer"
+msgid "Send notification email to customer"
+msgstr "Enviar correo electrónico de notificación al cliente"
+
+#: saleor/dashboard/order/forms.py:492
+msgctxt "Fulfillment record"
+msgid "Tracking number"
+msgstr "Número de seguimiento"
+
+#: saleor/dashboard/order/forms.py:513
+msgctxt "Remove voucher form error"
+msgid "This order has no voucher"
+msgstr "Este pedido no tiene cupón"
+
+#: saleor/dashboard/order/forms.py:526
+msgctxt "Payment status field value"
+msgid "All"
+msgstr "Todos"
+
+#: saleor/dashboard/order/forms.py:543
+msgctxt "Order form: subform to add variant to order form: variant field"
+msgid "Variant"
+msgstr "Variante"
+
+#: saleor/dashboard/order/forms.py:546
+msgctxt "Add variant to order form label"
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: saleor/dashboard/order/forms.py:567
+#, python-format
+msgctxt "Add item form error"
+msgid "Could not add item. Only %(remaining)d remaining in stock."
+msgstr ""
+"No se puedo agregar el producto. Solo hay %(remaining)d disponible en stock."
+
+#: saleor/dashboard/order/forms.py:592
+msgctxt "Order form: address subform - phone number input field"
+msgid "Phone number"
+msgstr "Número de teléfono"
+
+#: saleor/dashboard/order/forms.py:605
+msgctxt "Send mail to customer"
+msgid "Send shipment details to your customer now"
+msgstr "Enviar detalles de envío a tu cliente ahora"
+
+#: saleor/dashboard/order/forms.py:613
+msgctxt "Order tracking number"
+msgid "Tracking number"
+msgstr "Número de seguimiento"
+
+#: saleor/dashboard/order/forms.py:650
+#, python-format
+msgctxt "Fulfill order line form error"
+msgid "%(quantity)d item remaining to fulfill."
+msgid_plural "%(quantity)d items remaining to fulfill."
+msgstr[0] ""
+msgstr[1] ""
+
+#: saleor/dashboard/order/views.py:61
+msgctxt "Dashboard message related to an order"
+msgid "Draft order created"
+msgstr "Borrador de orden creado"
+
+#: saleor/dashboard/order/views.py:83
+msgctxt "Dashboard message related to an order"
+msgid "Order created from draft order"
+msgstr "Orden creada desde una orden borrador"
+
+#: saleor/dashboard/order/views.py:105
+msgctxt "Dashboard message"
+msgid "Draft order successfully removed"
+msgstr "Orden borrador eliminada satisfactoriamente"
+
+#: saleor/dashboard/order/views.py:143
+msgctxt "Dashboard message related to an order"
+msgid "Added note"
+msgstr "Nota agregada"
+
+#: saleor/dashboard/order/views.py:167
+#, python-format
+msgctxt "Dashboard message related to a payment"
+msgid "Captured %(amount)s"
+msgstr "%(amount)sretenido"
+
+#: saleor/dashboard/order/views.py:196
+#, python-format
+msgctxt "Dashboard message related to a payment"
+msgid "Refunded %(amount)s"
+msgstr "%(amount)s reembolsado"
+
+#: saleor/dashboard/order/views.py:220
+msgctxt "Dashboard message"
+msgid "Voided payment"
+msgstr "Pago anulado"
+
+#: saleor/dashboard/order/views.py:244
+#, python-format
+msgctxt "Dashboard message related to an order line"
+msgid ""
+"Changed quantity for variant %(variant)s from %(old_quantity)s to "
+"%(new_quantity)s"
+msgstr ""
+"Cantidad modificada para la variante%(variant)s de%(old_quantity)s a"
+"%(new_quantity)s"
+
+#: saleor/dashboard/order/views.py:269
+#, python-format
+msgctxt "Dashboard message related to an order line"
+msgid "Canceled item %s"
+msgstr "Elemento cancelado: %s"
+
+#: saleor/dashboard/order/views.py:301
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "Added %(quantity)d x %(variant)s"
+msgstr "Agregado %(quantity)d x %(variant)s"
+
+#: saleor/dashboard/order/views.py:306
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "Insufficient stock: could not add %(quantity)d x %(variant)s"
+msgstr "Stock insuficiente: no se pudo agregar %(quantity)d x %(variant)s"
+
+#: saleor/dashboard/order/views.py:326
+msgctxt "Dashboard message"
+msgid "Updated shipping address"
+msgstr "Dirección de envío actualizada"
+
+#: saleor/dashboard/order/views.py:332
+msgctxt "Dashboard message"
+msgid "Updated billing address"
+msgstr "Dirección de facturación actualizada"
+
+#: saleor/dashboard/order/views.py:363
+#, python-format
+msgctxt "Dashboard message"
+msgid "%s email assigned to an order"
+msgstr "%scorreo electrónico asignado a un pedido"
+
+#: saleor/dashboard/order/views.py:367
+#, python-format
+msgctxt "Dashboard message"
+msgid "%s user assigned to an order"
+msgstr "%s usuario asignado a un pedido"
+
+#: saleor/dashboard/order/views.py:371
+msgctxt "Dashboard message"
+msgid "Guest user assigned to an order"
+msgstr "Usuario invitado asignado a un pedido"
+
+#: saleor/dashboard/order/views.py:392
+msgctxt "Dashboard message"
+msgid "Customer removed from an order"
+msgstr "Cliente eliminado de un pedido"
+
+#: saleor/dashboard/order/views.py:407
+msgctxt "Dashboard message"
+msgid "Shipping updated"
+msgstr "Envío actualizado"
+
+#: saleor/dashboard/order/views.py:425
+msgctxt "Dashboard message"
+msgid "Shipping removed"
+msgstr "Envío eliminado"
+
+#: saleor/dashboard/order/views.py:439
+msgctxt "Dashboard message"
+msgid "Discount updated"
+msgstr "Descuento actualizado"
+
+#: saleor/dashboard/order/views.py:458
+msgctxt "Dashboard message"
+msgid "Voucher updated"
+msgstr "Cupón actualizado"
+
+#: saleor/dashboard/order/views.py:479
+msgctxt "Dashboard message"
+msgid "Order canceled"
+msgstr "Pedido cancelado"
+
+#: saleor/dashboard/order/views.py:500
+msgctxt "Dashboard message"
+msgid "Removed voucher from order"
+msgstr "Quitar cupón del pedido"
+
+#: saleor/dashboard/order/views.py:534
+msgctxt "Dashboard message"
+msgid "Order manually marked as paid"
+msgstr "Pedido marcado manualmente como pagado"
+
+#: saleor/dashboard/order/views.py:605
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "Fulfilled %(quantity_fulfilled)d item"
+msgid_plural "Fulfilled %(quantity_fulfilled)d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: saleor/dashboard/order/views.py:619
+msgctxt "Dashboard message related to an order"
+msgid "No items fulfilled"
+msgstr "Sin objetos completados"
+
+#: saleor/dashboard/order/views.py:641
+#, python-format
+msgctxt "Dashboard message"
+msgid "Fulfillment #%(fulfillment)s canceled"
+msgstr ""
+
+#: saleor/dashboard/order/views.py:679
+#, python-format
+msgctxt "Dashboard message"
+msgid "Fulfillment #%(fulfillment)s tracking number updated"
+msgstr ""
+
+#: saleor/dashboard/page/filters.py:8
+msgctxt "Page list sorting option"
+msgid "title"
+msgstr "título"
+
+#: saleor/dashboard/page/filters.py:9
+msgctxt "Page list sorting option"
+msgid "url"
+msgstr "url"
+
+#: saleor/dashboard/page/filters.py:14
+msgctxt "Page list title filter label"
+msgid "Title"
+msgstr "Título"
+
+#: saleor/dashboard/page/filters.py:17
+msgctxt "Page list url filter label"
+msgid "URL"
+msgstr "URL"
+
+#: saleor/dashboard/page/filters.py:20
+msgctxt "Page list sorting filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/page/filters.py:32
+#, python-format
+msgctxt "Number of matching records in the dashboard page list"
+msgid "Found %(counter)d matching page"
+msgid_plural "Found %(counter)d matching pages"
+msgstr[0] "Se encontró %(counter)d pagina"
+msgstr[1] "Se encontraron %(counter)d páginas"
+
+#: saleor/dashboard/page/forms.py:12
+msgctxt "Page form: page content field"
+msgid "Content"
+msgstr "Contenido"
+
+#: saleor/dashboard/page/forms.py:22
+msgctxt "Page form: title field"
+msgid "Title"
+msgstr "Título"
+
+#: saleor/dashboard/page/forms.py:23
+msgctxt "Page form: slug field"
+msgid "Slug"
+msgstr "Slug"
+
+#: saleor/dashboard/page/forms.py:25
+msgctxt "Page form: available on which date field"
+msgid "Available on"
+msgstr "Disponible en"
+
+#: saleor/dashboard/page/forms.py:27
+msgctxt "Page form: publication status indicator"
+msgid "Is published"
+msgstr "Está publicado"
+
+#: saleor/dashboard/page/forms.py:31
+msgctxt "Form field help text"
+msgid "Slug is being used to create page URL"
+msgstr "El slug se está utilizando para crear la URL de la página"
+
+#: saleor/dashboard/page/views.py:48
+msgctxt "Dashboard message"
+msgid "Saved page"
+msgstr "Página guardada"
+
+#: saleor/dashboard/page/views.py:66
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed page %s"
+msgstr "Página eliminada %s"
+
+#: saleor/dashboard/product/__init__.py:11
+msgctxt "product bulk action"
+msgid "Publish"
+msgstr "Publicar"
+
+#: saleor/dashboard/product/__init__.py:12
+msgctxt "product bulk action"
+msgid "Unpublish"
+msgstr "Retirar publicación"
+
+#: saleor/dashboard/product/filters.py:12
+msgctxt "Product list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/product/filters.py:13
+msgctxt "Product type list sorting option"
+msgid "price"
+msgstr "precio"
+
+#: saleor/dashboard/product/filters.py:16
+msgctxt "Product attribute list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/product/filters.py:19
+msgctxt "Product type list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/product/filters.py:28
+msgctxt "Product list filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/product/filters.py:31
+msgctxt "Product list filter label"
+msgid "Category"
+msgstr "Categoría"
+
+#: saleor/dashboard/product/filters.py:35
+msgctxt "Product list filter label"
+msgid "Product type"
+msgstr "Tipo de producto"
+
+#: saleor/dashboard/product/filters.py:39
+msgctxt "Product list filter label"
+msgid "Price"
+msgstr "Precio"
+
+#: saleor/dashboard/product/filters.py:43
+msgctxt "Product list filter label"
+msgid "Is published"
+msgstr "Está publicado"
+
+#: saleor/dashboard/product/filters.py:48
+msgctxt "Product list filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/product/filters.py:60
+#, python-format
+msgctxt "Number of matching records in the dashboard products list"
+msgid "Found %(counter)d matching product"
+msgid_plural "Found %(counter)d matching products"
+msgstr[0] "Se encontró %(counter)d pedido que coincide"
+msgstr[1] "Se encontraron %(counter)d productos que coinciden"
+
+#: saleor/dashboard/product/filters.py:67
+msgctxt "Attribute list filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/product/filters.py:70
+msgctxt "Attribute list filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/product/filters.py:82
+#, python-format
+msgctxt "Number of matching records in the dashboard attributes list"
+msgid "Found %(counter)d matching attribute"
+msgid_plural "Found %(counter)d matching attributes"
+msgstr[0] "Se encontró %(counter)d atributo que coincide"
+msgstr[1] "Se encontraron %(counter)d atributos que coinciden"
+
+#: saleor/dashboard/product/filters.py:89
+msgctxt "Product type list filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/product/filters.py:92
+msgctxt "Product type list filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/product/filters.py:97
+msgctxt "Product type list filter label"
+msgid "Product attributes"
+msgstr "Atributos de Producto"
+
+#: saleor/dashboard/product/filters.py:102
+msgctxt "Product type list filter label"
+msgid "Variant attributes"
+msgstr "Atributos de la variante"
+
+#: saleor/dashboard/product/filters.py:114
+#, python-format
+msgctxt "Number of matching records in the dashboard product types list"
+msgid "Found %(counter)d matching product type"
+msgid_plural "Found %(counter)d matching product types"
+msgstr[0] "Se encontró %(counter)d tipo de producto que coincide"
+msgstr[1] "Se encontraron %(counter)d tipos de producto que coinciden"
+
+#: saleor/dashboard/product/forms.py:42
+msgctxt "Help text in rich-text editor field"
+msgid "Select text to enable text-formatting tools."
+msgstr "Selecciona el texto para habilitar herramientas de formateo de texto"
+
+#: saleor/dashboard/product/forms.py:59
+msgctxt "Product type form label"
+msgid "Product type"
+msgstr "Tipo de producto"
+
+#: saleor/dashboard/product/forms.py:76
+msgctxt "Product type tax rate type"
+msgid "Tax rate"
+msgstr "Tasa de impuesto"
+
+#: saleor/dashboard/product/forms.py:78 saleor/dashboard/product/forms.py:250
+msgctxt "ProductType weight"
+msgid "Weight"
+msgstr "Peso"
+
+#: saleor/dashboard/product/forms.py:81
+msgctxt "ProductVariant weight help text"
+msgid ""
+"Default weight that will be used for calculating shipping price for products "
+"of that type."
+msgstr ""
+"Peso predeterminado que se utilizará para calcular el precio de envío para "
+"productos de ese tipo."
+
+#: saleor/dashboard/product/forms.py:86
+msgctxt "Product type attributes"
+msgid "Attributes common to all variants."
+msgstr "Atributos comunes a todas las variantes."
+
+#: saleor/dashboard/product/forms.py:91
+msgctxt "Product type attributes"
+msgid "Attributes specific to each variant."
+msgstr "Atributos específicos de cada variante."
+
+#: saleor/dashboard/product/forms.py:102
+msgctxt "Enable variants"
+msgid "Enable variants"
+msgstr "Habilitar variantes"
+
+#: saleor/dashboard/product/forms.py:105
+msgctxt "Shipping toggle"
+msgid "Require shipping"
+msgstr "Requiere envío"
+
+#: saleor/dashboard/product/forms.py:140
+msgctxt "Product type form error"
+msgid "Product variants are disabled."
+msgstr "Las variantes de producto están deshabilitadas"
+
+#: saleor/dashboard/product/forms.py:145
+msgctxt "Product type form error"
+msgid "A single attribute can't belong to both a product and its variant."
+msgstr ""
+"Un atributo no puede pertenecer al mismo tiempo a un producto y su variante"
+
+#: saleor/dashboard/product/forms.py:167
+msgctxt "Product type form error"
+msgid "Some products of this type have more than one variant."
+msgstr "Algunos productos de este tipo tienen mas de una variante."
+
+#: saleor/dashboard/product/forms.py:229
+msgctxt "Product tax rate type"
+msgid "Tax rate"
+msgstr "Tasa de impuesto"
+
+#: saleor/dashboard/product/forms.py:233
+msgctxt "Category"
+msgid "Category"
+msgstr "Categoría"
+
+#: saleor/dashboard/product/forms.py:236
+msgctxt "Add to collection select"
+msgid "Collections"
+msgstr "Colecciones"
+
+#: saleor/dashboard/product/forms.py:241
+msgctxt "Brand select"
+msgid "Brand"
+msgstr ""
+
+#: saleor/dashboard/product/forms.py:244
+msgctxt "Specs"
+msgid "Especificaciones"
+msgstr ""
+
+#: saleor/dashboard/product/forms.py:253
+msgctxt "Product weight field help text"
+msgid ""
+"Weight will be used to calculate shipping price, if empty, equal to default "
+"value used on the ProductType."
+msgstr ""
+"El peso se utilizará para calcular el precio de envío, si está vacío, será "
+"igual al valor predeterminado usado en el tipo de producto."
+
+#: saleor/dashboard/product/forms.py:264 saleor/dashboard/shipping/forms.py:130
+msgctxt "Currency amount"
+msgid "Price"
+msgstr "Precio"
+
+#: saleor/dashboard/product/forms.py:266
+msgctxt "Availability date"
+msgid "Publish product on"
+msgstr "Publicar producto en"
+
+#: saleor/dashboard/product/forms.py:268
+msgctxt "Product published toggle"
+msgid "Published"
+msgstr "Publicado"
+
+#: saleor/dashboard/product/forms.py:270
+msgctxt "Charge taxes on product"
+msgid "Charge taxes on this product"
+msgstr "Cargar impuestos en este producto"
+
+#: saleor/dashboard/product/forms.py:272
+msgctxt "Product specs"
+msgid "Especificaciones"
+msgstr ""
+
+#: saleor/dashboard/product/forms.py:274
+msgctxt "Product tags"
+msgid "Etiquetas"
+msgstr ""
+
+#: saleor/dashboard/product/forms.py:295
+msgctxt "Currency gross amount"
+msgid "Gross price"
+msgstr "Precio bruto"
+
+#: saleor/dashboard/product/forms.py:298
+msgctxt "Currency net amount"
+msgid "Net price"
+msgstr "Precio neto"
+
+#: saleor/dashboard/product/forms.py:338
+msgctxt "ProductVariant weight"
+msgid "Weight"
+msgstr "Peso"
+
+#: saleor/dashboard/product/forms.py:341
+msgctxt "ProductVariant weight help text"
+msgid ""
+"Weight will be used to calculate shipping price. If empty, weight from "
+"Product or ProductType will be used."
+msgstr ""
+"El peso será usado para calcular el precio de envío. Si está vacío, se "
+"utilizará el peso del producto o del tipo de producto."
+
+#: saleor/dashboard/product/forms.py:350
+msgctxt "SKU"
+msgid "SKU"
+msgstr "SKU"
+
+#: saleor/dashboard/product/forms.py:352
+msgctxt "Override price"
+msgid "Selling price override"
+msgstr "Precio de venta con descuento"
+
+#: saleor/dashboard/product/forms.py:353
+msgctxt "Integer number"
+msgid "Number in stock"
+msgstr "Número en stock"
+
+#: saleor/dashboard/product/forms.py:354
+msgctxt "Currency amount"
+msgid "Cost price"
+msgstr "Precio de coste"
+
+#: saleor/dashboard/product/forms.py:356
+msgctxt "Track inventory field"
+msgid "Track inventory"
+msgstr "Registro de inventario"
+
+#: saleor/dashboard/product/forms.py:360
+msgctxt "product variant handle stock field help text"
+msgid "Automatically track this product's inventory"
+msgstr "Rastrear automáticamente el inventario de este producto"
+
+#: saleor/dashboard/product/forms.py:375
+msgctxt "Override price"
+msgid "Selling gross price override"
+msgstr ""
+
+#: saleor/dashboard/product/forms.py:377
+msgctxt "Currency amount"
+msgid "Cost gross price"
+msgstr "Precio de coste bruto"
+
+#: saleor/dashboard/product/forms.py:380
+msgctxt "Override price"
+msgid "Selling net price override"
+msgstr ""
+
+#: saleor/dashboard/product/forms.py:382
+msgctxt "Currency amount"
+msgid "Cost net price"
+msgstr "Precio de coste neto"
+
+#: saleor/dashboard/product/forms.py:435 saleor/dashboard/product/forms.py:540
+msgctxt "Product image"
+msgid "Image"
+msgstr "Imagen"
+
+#: saleor/dashboard/product/forms.py:476
+msgctxt "Product display name"
+msgid "Display name"
+msgstr "Nombre a mostrar"
+
+#: saleor/dashboard/product/forms.py:478
+msgctxt "Product internal name"
+msgid "Internal name"
+msgstr "Nombre interno"
+
+#: saleor/dashboard/product/views.py:128
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added product %s"
+msgstr "Producto agregado %s"
+
+#: saleor/dashboard/product/views.py:159
+#, python-format
+msgctxt "Dashboard message"
+msgid "Updated product %s"
+msgstr "Producto actualizado %s"
+
+#: saleor/dashboard/product/views.py:174
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed product %s"
+msgstr "Se ha borrado el producto %s"
+
+#: saleor/dashboard/product/views.py:193
+#, python-format
+msgctxt "Dashboard message"
+msgid "%(count)d product has been updated"
+msgid_plural "%(count)d products have been updated"
+msgstr[0] "%(count)d producto ha sido actualizado"
+msgstr[1] "%(count)d productos han sido actualizados"
+
+#: saleor/dashboard/product/views.py:247
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added product type %s"
+msgstr "Tipo de producto agregado %s"
+
+#: saleor/dashboard/product/views.py:265
+#, python-format
+msgctxt "Dashboard message"
+msgid "Updated product type %s"
+msgstr "Tipo de producto actualizado %s"
+
+#: saleor/dashboard/product/views.py:282
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed product type %s"
+msgstr "Se ha borrado el tipo de producto %s"
+
+#: saleor/dashboard/product/views.py:330 saleor/dashboard/product/views.py:351
+#, python-format
+msgctxt "Dashboard message"
+msgid "Saved variant %s"
+msgstr "Variante %s guardada "
+
+#: saleor/dashboard/product/views.py:371
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed variant %s"
+msgstr "Variante %s borrada"
+
+#: saleor/dashboard/product/views.py:452
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added image %s"
+msgstr "Imagen agregada %s"
+
+#: saleor/dashboard/product/views.py:473
+#, python-format
+msgctxt "Dashboard message"
+msgid "Updated image %s"
+msgstr "Imagen actualizada %s"
+
+#: saleor/dashboard/product/views.py:491
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed image %s"
+msgstr "Imagen borrada %s"
+
+#: saleor/dashboard/product/views.py:574
+msgctxt "Dashboard message"
+msgid "Added attribute"
+msgstr "Atributo agregado"
+
+#: saleor/dashboard/product/views.py:591
+msgctxt "Dashboard message"
+msgid "Updated attribute"
+msgstr "Atributo actualizado"
+
+#: saleor/dashboard/product/views.py:608
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed attribute %s"
+msgstr "Atributo %s borrado"
+
+#: saleor/dashboard/product/views.py:627
+msgctxt "Dashboard message"
+msgid "Added attribute's value"
+msgstr "Se agregó el valor del atributo"
+
+#: saleor/dashboard/product/views.py:646
+msgctxt "Dashboard message"
+msgid "Updated attribute's value"
+msgstr "Se actualizó el valor del atributo"
+
+#: saleor/dashboard/product/views.py:664
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed attribute's value %s"
+msgstr "Se ha borrado el valor %s del atributo"
+
+#: saleor/dashboard/seo/fields.py:9
+msgctxt "Form field help text"
+msgid "If empty, the preview shows what will be autogenerated."
+msgstr "Si está vacío, la vista previa muestra qué será autogenerado"
+
+#: saleor/dashboard/seo/fields.py:30
+msgctxt "A SEO friendly title"
+msgid "SEO Friendly Title"
+msgstr "Titulo amistoso para SEO"
+
+#: saleor/dashboard/seo/fields.py:50
+msgctxt "A SEO friendly description"
+msgid "SEO Friendly Description"
+msgstr "Descripción amistosa para SEO"
+
+#: saleor/dashboard/shipping/filters.py:10
+msgctxt "Group list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/shipping/filters.py:16
+msgctxt "Shipping zones list filter label"
+msgid "Shipping zone name"
+msgstr "Nombre de la zona de envío"
+
+#: saleor/dashboard/shipping/filters.py:20
+msgctxt "Shipping zones list filter label"
+msgid "Price range"
+msgstr "Rango de precio"
+
+#: saleor/dashboard/shipping/filters.py:23
+msgctxt "Shipping zones filter label"
+msgid "Country"
+msgstr "País"
+
+#: saleor/dashboard/shipping/filters.py:27
+msgctxt "Product list sorting filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/shipping/filters.py:40
+#, python-format
+msgctxt "Number of matching records in the dashboard shipping zones list"
+msgid "Found %(counter)d matching shipping zone"
+msgid_plural "Found %(counter)d matching shipping zones"
+msgstr[0] "Se encontró %(counter)d zona de envío."
+msgstr[1] "Se encontraron %(counter)d zonas de envío"
+
+#: saleor/dashboard/shipping/forms.py:36
+msgctxt "Label of the default weight unit picker"
+msgid "Default weight unit"
+msgstr "Unidad de peso por defecto"
+
+#: saleor/dashboard/shipping/forms.py:40
+msgctxt "Default weight unit help text"
+msgid ""
+"Default unit for weights entered from the dashboard.All weights will be "
+"recalculated to the new unit."
+msgstr ""
+"Unidad predeterminada para pesos ingresado ​​desde dashboard. Todos los pesos "
+"serán recalculados de acuerdo a la nueva unidad."
+
+#: saleor/dashboard/shipping/forms.py:50
+msgctxt "Shippment Zone field name"
+msgid "Shipping zone name"
+msgstr "Nombre de la zona de envío"
+
+#: saleor/dashboard/shipping/forms.py:52
+msgctxt "Shipping Zone field name"
+msgid "Rest of World"
+msgstr "Resto del Mundo"
+
+#: saleor/dashboard/shipping/forms.py:54
+#, fuzzy
+#| msgctxt "Customer list sorting option"
+#| msgid "location"
+msgctxt "Shipping Zone field name"
+msgid "National"
+msgstr "locación"
+
+#: saleor/dashboard/shipping/forms.py:56
+msgctxt "List of countries to pick from"
+msgid "Countries"
+msgstr "Paises"
+
+#: saleor/dashboard/shipping/forms.py:60
+msgctxt "Countries field help text"
+msgid "Each country might be included in only one shipping zone."
+msgstr "Cada país debería estar incluido en una sola zona de envío."
+
+#: saleor/dashboard/shipping/forms.py:63
+msgctxt "Help text for ShippingZone name"
+msgid "Name is for internal use only, it won't be displayed to your customers"
+msgstr "El nombre es solo para uso interno, no se mostrará a sus clientes"
+
+#: saleor/dashboard/shipping/forms.py:67
+msgctxt "Help text for ShippingZone name"
+msgid ""
+"If selected, this zone will include any countries that are not already "
+"listed in your other shipping zones."
+msgstr ""
+"Si se selecciona, esta zona incluirá cualquier país que aún no esté listado "
+"en sus otras zonas de envío."
+
+#: saleor/dashboard/shipping/forms.py:71
+msgctxt "Help text for ShippingZone name"
+msgid ""
+"If selected, this zone will used as national shipping zone.Please, select "
+"only one country to use this option."
+msgstr ""
+
+#: saleor/dashboard/shipping/forms.py:96
+msgctxt "ShippingZone  with \"default\" option selected already exists"
+msgid "Default ShippingZone already exists."
+msgstr "La zona de envío predeterminada ya existe."
+
+#: saleor/dashboard/shipping/forms.py:109
+#, python-format
+msgctxt "Shipping zone containing duplicated countries form error"
+msgid ""
+"Countries already exists in another shipping zone: %(list_of_countries)s"
+msgstr "Los países ya existen en otra zona de envío:%(list_of_countries)s"
+
+#: saleor/dashboard/shipping/forms.py:118
+msgctxt "ShippingZone field error"
+msgid "This field is required."
+msgstr "Este campo es requerido."
+
+#: saleor/dashboard/shipping/forms.py:129
+msgctxt "Shipping Method name"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/shipping/forms.py:134
+msgctxt "Shipping method name help text"
+msgid "Customers will see this at the checkout."
+msgstr "Los clientes verán esto en el checkout."
+
+#: saleor/dashboard/shipping/forms.py:142
+msgctxt "Minimum order price to use this shipping method"
+msgid "Minimum order price"
+msgstr "Precio mínimo del pedido."
+
+#: saleor/dashboard/shipping/forms.py:145
+msgctxt "Maximum order price to use this order"
+msgid "Maximum order price"
+msgstr "Precio máximo del pedido."
+
+#: saleor/dashboard/shipping/forms.py:155
+msgctxt "Placeholder for maximum order price set to unlimited"
+msgid "No limit"
+msgstr "Sin limite"
+
+#: saleor/dashboard/shipping/forms.py:168
+#: saleor/dashboard/shipping/forms.py:205
+msgctxt "Price shipping method form error"
+msgid "Maximum order price should be larger than the minimum order price."
+msgstr ""
+"El precio máximo del pedido debe ser mayor que el precio mínimo del pedido."
+
+#: saleor/dashboard/shipping/forms.py:177
+msgctxt "Minimum order weight to use this shipping method"
+msgid "Minimum order weight"
+msgstr "Peso mínimo del pedido."
+
+#: saleor/dashboard/shipping/forms.py:181
+msgctxt "Maximum order weight to use this shipping method"
+msgid "Maximum order weight"
+msgstr "Peso máximo del pedido."
+
+#: saleor/dashboard/shipping/forms.py:192
+msgctxt "Placeholder for maximum order weight set to unlimited"
+msgid "No limit"
+msgstr "Sin limite"
+
+#: saleor/dashboard/shipping/forms.py:217
+#, fuzzy
+#| msgctxt "Order list sorting option"
+#| msgid "payment"
+msgctxt "Location shipping method form field label"
+msgid "Departament"
+msgstr "Pago"
+
+#: saleor/dashboard/shipping/forms.py:223
+msgctxt "Location shipping method form field label"
+msgid "Province"
+msgstr ""
+
+#: saleor/dashboard/shipping/forms.py:229
+msgctxt "Location shipping method form field label"
+msgid "District"
+msgstr ""
+
+#: saleor/dashboard/shipping/views.py:28
+msgctxt "Dashboard message"
+msgid "Updated default weight unit"
+msgstr "Unidad de peso por defecto actualizada"
+
+#: saleor/dashboard/shipping/views.py:49
+msgctxt "Dashboard message"
+msgid "Added shipping zone"
+msgstr "Zona de envío añadida"
+
+#: saleor/dashboard/shipping/views.py:63
+msgctxt "Dashboard message"
+msgid "Updated shipping zone"
+msgstr "Zona de envío actualizada."
+
+#: saleor/dashboard/shipping/views.py:94
+#, python-format
+msgctxt "Dashboard message"
+msgid "%(shipping_zone_name)s successfully removed"
+msgstr "%(shipping_zone_name)s eliminado con éxito"
+
+#: saleor/dashboard/shipping/views.py:115
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added shipping method for %(zone_name)s shipping zone"
+msgstr "Método de envío agregado para la zona de envío %(zone_name)s."
+
+#: saleor/dashboard/shipping/views.py:139
+#, python-format
+msgctxt "Dashboard message"
+msgid "Updated %(method_name)s shipping method"
+msgstr "Se actualizó el método de envío %(method_name)s"
+
+#: saleor/dashboard/shipping/views.py:160
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed %(shipping_method_name)s shipping method"
+msgstr "Se eliminó el método de envío %(shipping_method_name)s"
+
+#: saleor/dashboard/sites/forms.py:14
+msgctxt "Domain name (FQDN)"
+msgid "Domain name"
+msgstr "Nombre de dominio"
+
+#: saleor/dashboard/sites/forms.py:16
+msgctxt "Display name"
+msgid "Display name"
+msgstr "Nombre a mostrar"
+
+#: saleor/dashboard/sites/forms.py:27
+msgctxt "Header text"
+msgid "Header text"
+msgstr "Texto de cabecera"
+
+#: saleor/dashboard/sites/forms.py:32
+msgctxt "Inventory tracking by default settings toggle label"
+msgid "Enable inventory tracking for newly created products"
+msgstr "Habilitar registro de inventario para productos recientemente creados"
+
+#: saleor/dashboard/sites/forms.py:34
+msgctxt "Default weight unit"
+msgid "Default weight unit"
+msgstr "Unidad de peso por defecto"
+
+#: saleor/dashboard/sites/forms.py:38
+msgctxt "handle stock by default settings field help text"
+msgid ""
+"This will set the default value of stock handling on product and variant "
+"creation"
+msgstr ""
+"Esto establecerá el valor por defecto del manejo de existencias en la "
+"creación de productos y alternativas"
+
+#: saleor/dashboard/sites/forms.py:48
+msgctxt "Key for chosen authorization method"
+msgid "Key"
+msgstr "Clave"
+
+#: saleor/dashboard/sites/forms.py:50
+msgctxt "Password"
+msgid "Password"
+msgstr "Constraseña"
+
+#: saleor/dashboard/sites/forms.py:69
+#, fuzzy
+#| msgctxt "Enable variants"
+#| msgid "Enable variants"
+msgctxt "Cash payment enabled field label"
+msgid "Enable cash payment "
+msgstr "Habilitar variantes"
+
+#: saleor/dashboard/sites/forms.py:72
+msgctxt "Payment against delivery enabled field label"
+msgid "Enable payment against delivery"
+msgstr ""
+
+#: saleor/dashboard/sites/forms.py:90
+msgctxt "Logo de la tienda para el dashboard"
+msgid "Logo"
+msgstr ""
+
+#: saleor/dashboard/sites/forms.py:93
+msgctxt "Color del header"
+msgid "Color del header"
+msgstr ""
+
+#: saleor/dashboard/sites/forms.py:96
+msgctxt "Color del sub header"
+msgid "Color del subheader"
+msgstr ""
+
+#: saleor/dashboard/sites/forms.py:99
+msgctxt "Color del boton añadir"
+msgid "Color del boton añadir"
+msgstr ""
+
+#: saleor/dashboard/sites/forms.py:102
+msgctxt "Color del texto en el header"
+msgid "Color del texto en el header"
+msgstr ""
+
+#: saleor/dashboard/sites/forms.py:119
+msgctxt "logo de la tienda"
+msgid "Logo"
+msgstr ""
+
+#: saleor/dashboard/sites/forms.py:122
+msgctxt "store_accent_color"
+msgid "Color de acento de la tienda"
+msgstr ""
+
+#: saleor/dashboard/sites/forms.py:125
+msgctxt "store_header_color"
+msgid "Color del header de la tienda"
+msgstr ""
+
+#: saleor/dashboard/sites/forms.py:128
+msgctxt "store_header_text_color"
+msgid "Color del texto en el header de la tienda"
+msgstr ""
+
+#: saleor/dashboard/sites/views.py:37 saleor/dashboard/sites/views.py:165
+#: saleor/dashboard/sites/views.py:202
+msgctxt "Dashboard message"
+msgid "Updated site settings"
+msgstr "Actualizar la configuración del sitio"
+
+#: saleor/dashboard/sites/views.py:66
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added authorization key %s"
+msgstr "Se ha agregado la clave de autorización %s"
+
+#: saleor/dashboard/sites/views.py:82
+#, python-format
+msgctxt "dashboard message"
+msgid "Updated authorization key %s"
+msgstr "Se ha actualizado la clave de autorización %s"
+
+#: saleor/dashboard/sites/views.py:100
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed site authorization key %s"
+msgstr "Se ha borrado la clave de autorización del sitio %s"
+
+#: saleor/dashboard/sites/views.py:129
+#, fuzzy
+#| msgctxt "Dashboard message"
+#| msgid "Updated taxes settings"
+msgctxt "Dashboard message"
+msgid "Updated payment settings"
+msgstr "Configuraciones de impuestos actualizadas"
+
+#: saleor/dashboard/staff/filters.py:29
+msgctxt "Group list filter label"
+msgid "Permissions"
+msgstr "Permisos"
+
+#: saleor/dashboard/staff/filters.py:33
+msgctxt "Staff list filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/staff/filters.py:45
+#, python-format
+msgctxt "Number of matching records in the dashboard staff members list"
+msgid "Found %(counter)d matching staff member"
+msgid_plural "Found %(counter)d matching staff members"
+msgstr[0] "Se encontró %(counter)d miembro del personal que coincide"
+msgstr[1] "Se encontraron%(counter)d miembros del personal que coinciden"
+
+#: saleor/dashboard/staff/forms.py:15
+msgctxt "Label above the permissions choicefield"
+msgid "Permissions"
+msgstr "Permisos"
+
+#: saleor/dashboard/staff/forms.py:27
+msgctxt "Email"
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: saleor/dashboard/staff/forms.py:29
+msgctxt "User active toggle"
+msgid "User is active"
+msgstr "El usuario está activo"
+
+#: saleor/dashboard/staff/forms.py:31
+#, fuzzy
+#| msgctxt "Customer form: is active toggle"
+#| msgid "User is active"
+msgctxt "User staff toggle"
+msgid "User is staff"
+msgstr "El usuario está activo"
+
+#: saleor/dashboard/staff/views.py:43
+#, python-format
+msgctxt "Dashboard message"
+msgid "Updated staff member %s"
+msgstr "Se ha actualizado el miembro del personal %s"
+
+#: saleor/dashboard/staff/views.py:65
+#, python-format
+msgctxt "Dashboard message"
+msgid "Added staff member %s"
+msgstr "Se ha agregado al miembro del personal %s"
+
+#: saleor/dashboard/staff/views.py:84
+#, python-format
+msgctxt "Dashboard message"
+msgid "Removed staff member %s"
+msgstr "Se ha borrado al miembro del personal %s"
+
+#: saleor/dashboard/store/bank_account/forms.py:17
+msgctxt "Bank account provider form field"
+msgid "Provider"
+msgstr ""
+
+#: saleor/dashboard/store/bank_account/forms.py:19
+#, fuzzy
+#| msgctxt "Order form: address subform - phone number input field"
+#| msgid "Phone number"
+msgctxt "Bank account number form field"
+msgid "Account number"
+msgstr "Número de teléfono"
+
+#: saleor/dashboard/store/bank_account/views.py:20
+#, fuzzy, python-format
+#| msgctxt "Dashboard message"
+#| msgid "Added product %s"
+msgctxt "Dashboard message"
+msgid "Added bank account %s"
+msgstr "Producto agregado %s"
+
+#: saleor/dashboard/store/bank_account/views.py:37
+#, fuzzy, python-format
+#| msgctxt "Dashboard message"
+#| msgid "Updated menu %s"
+msgctxt "dashboard message"
+msgid "Updated bank account %s"
+msgstr "Menú actualizado %s"
+
+#: saleor/dashboard/store/bank_account/views.py:56
+#, fuzzy, python-format
+#| msgctxt "Dashboard message"
+#| msgid "Removed site authorization key %s"
+msgctxt "Dashboard message"
+msgid "Removed site bank account %s"
+msgstr "Se ha borrado la clave de autorización del sitio %s"
+
+#: saleor/dashboard/store/physical_store/filters.py:10
+#, fuzzy
+#| msgctxt "Category list sorting option"
+#| msgid "name"
+msgctxt "Physical store list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/store/physical_store/filters.py:19
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Physical store name filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/store/physical_store/filters.py:22
+msgctxt "Physical store list filter label"
+msgid "Principal"
+msgstr ""
+
+#: saleor/dashboard/store/physical_store/filters.py:28
+#, fuzzy
+#| msgctxt "Category list sorting filter label"
+#| msgid "Sort by"
+msgctxt "Physical store list sorting filter label"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/store/physical_store/filters.py:40
+#, fuzzy, python-format
+#| msgctxt "Number of matching records in the dashboard sales list"
+#| msgid "Found %(counter)d matching sale"
+#| msgid_plural "Found %(counter)d matching sales"
+msgctxt "Number of matching records in the dashboard physical store list"
+msgid "Found %(counter)d matching physical store"
+msgid_plural "Found %(counter)d matching physical stores"
+msgstr[0] "Se encontró%(counter)d descuento que coincide"
+msgstr[1] "Se encontraron %(counter)d descuentos que coinciden"
+
+#: saleor/dashboard/store/physical_store/forms.py:21
+msgctxt "Physical store field name"
+msgid "Site"
+msgstr ""
+
+#: saleor/dashboard/store/physical_store/forms.py:23
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Physical store field name"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/store/physical_store/forms.py:25
+msgctxt "Physical store field name"
+msgid "Is main store"
+msgstr ""
+
+#: saleor/dashboard/store/physical_store/forms.py:45
+msgctxt "Glovo form field name"
+msgid "Delivery con Glovo"
+msgstr ""
+
+#: saleor/dashboard/store/physical_store/views.py:88
+#: saleor/dashboard/store/physical_store/views.py:136
+#, fuzzy
+#| msgctxt "Sale (discount) message"
+#| msgid "Added sale"
+msgctxt "Dashboard message"
+msgid "Added physical stores"
+msgstr "Venta agregada"
+
+#: saleor/dashboard/store/physical_store/views.py:160
+#, python-format
+msgctxt "Dashboard message"
+msgid "Deleted physical store %s"
+msgstr ""
+
+#: saleor/dashboard/store/social_network/forms.py:17
+msgctxt "Social network provider form field"
+msgid "Provider"
+msgstr ""
+
+#: saleor/dashboard/store/social_network/forms.py:19
+msgctxt "Password"
+msgid "Enlace"
+msgstr ""
+
+#: saleor/dashboard/store/social_network/views.py:20
+#, fuzzy, python-format
+#| msgctxt "Dashboard message"
+#| msgid "Added category %s"
+msgctxt "Dashboard message"
+msgid "Added social network %s"
+msgstr "Categoría añadida%s"
+
+#: saleor/dashboard/store/social_network/views.py:37
+#, fuzzy, python-format
+#| msgctxt "Dashboard message"
+#| msgid "Updated category %s"
+msgctxt "dashboard message"
+msgid "Updated social network %s"
+msgstr "Categoría actualizada%s"
+
+#: saleor/dashboard/store/social_network/views.py:56
+#, fuzzy, python-format
+#| msgctxt "Dashboard message"
+#| msgid "Removed site authorization key %s"
+msgctxt "Dashboard message"
+msgid "Removed site social network %s"
+msgstr "Se ha borrado la clave de autorización del sitio %s"
+
+#: saleor/dashboard/store/special_page/forms.py:17
+#, fuzzy
+#| msgctxt "Link object type group description"
+#| msgid "Page"
+msgctxt "special page provider form field"
+msgid "Page type"
+msgstr "Página"
+
+#: saleor/dashboard/store/special_page/forms.py:19
+#, fuzzy
+#| msgctxt "Link object type group description"
+#| msgid "Page"
+msgctxt "Password"
+msgid "Page"
+msgstr "Página"
+
+#: saleor/dashboard/store/special_page/views.py:20
+#, fuzzy, python-format
+#| msgctxt "Dashboard message"
+#| msgid "Added image %s"
+msgctxt "Dashboard message"
+msgid "Added special page %s"
+msgstr "Imagen agregada %s"
+
+#: saleor/dashboard/store/special_page/views.py:37
+#, fuzzy, python-format
+#| msgctxt "Dashboard message"
+#| msgid "Updated image %s"
+msgctxt "dashboard message"
+msgid "Updated special page %s"
+msgstr "Imagen actualizada %s"
+
+#: saleor/dashboard/store/special_page/views.py:56
+#, fuzzy, python-format
+#| msgctxt "Dashboard message"
+#| msgid "Removed page %s"
+msgctxt "Dashboard message"
+msgid "Removed site special page %s"
+msgstr "Página eliminada %s"
+
+#: saleor/dashboard/taxes/filters.py:11
+msgctxt "Product list sorting option"
+msgid "country_code"
+msgstr "country_code"
+
+#: saleor/dashboard/taxes/filters.py:24
+msgctxt "Taxes list filter label"
+msgid "Country name"
+msgstr "Nombre de país"
+
+#: saleor/dashboard/taxes/filters.py:28
+msgctxt "Taxes list sorting form"
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: saleor/dashboard/taxes/filters.py:45
+#, python-format
+msgctxt "Number of matching records in the dashboard taxes list"
+msgid "Found %(counter)d matching country"
+msgid_plural "Found %(counter)d matching countries"
+msgstr[0] "Se encontraron %(counter)d país."
+msgstr[1] "Se encontraron%(counter)d países. "
+
+#: saleor/dashboard/taxes/forms.py:16
+msgctxt "Include taxes in prices"
+msgid "All products prices are entered with tax included"
+msgstr "Todos los precios de productos son ingresados con impuestos incluídos"
+
+#: saleor/dashboard/taxes/forms.py:19
+msgctxt "Display gross prices"
+msgid "Show gross prices to customers in the storefront"
+msgstr "Mostrar precios brutos a los clientes en la tienda."
+
+#: saleor/dashboard/taxes/forms.py:22
+msgctxt "Charge taxes on shipping rates"
+msgid "Charge taxes on shipping rates"
+msgstr "Cargar impuestos en las tarifas de envío"
+
+#: saleor/dashboard/taxes/views.py:60
+msgctxt "Dashboard message"
+msgid "Updated taxes settings"
+msgstr "Configuraciones de impuestos actualizadas"
+
+#: saleor/dashboard/taxes/views.py:75
+msgctxt "Dashboard message"
+msgid "Tax rates updated successfully"
+msgstr "Tasas de impuesto actualizadas satisfactoriamente"
+
+#: saleor/dashboard/taxes/views.py:81
+msgctxt "Dashboard message"
+msgid ""
+"Could not fetch tax rates. Make sure you have supplied a valid API Access "
+"Key.<br/>Check the server logs for more information about this error."
+msgstr ""
+"No se pudo obtener las tasas de impuestos. Asegúrese de haber proporcionado "
+"una clave de acceso a la API válida. Verifique los registros del servidor "
+"para obtener más información sobre este error."
+
+#: saleor/dashboard/templatetags/chips.py:66
+msgctxt "Possible values of boolean filter"
+msgid "yes,no,all"
+msgstr "si,no,todos"
+
+#: saleor/dashboard/templatetags/chips.py:79
+#, python-format
+msgctxt "Label of first value in range filter"
+msgid "From %(value)s"
+msgstr "De %(value)s"
+
+#: saleor/dashboard/templatetags/chips.py:80
+#, python-format
+msgctxt "Label of second value in range filter"
+msgid "To %(value)s"
+msgstr "A %(value)s"
+
+#: saleor/dashboard/templatetags/orders.py:14
+msgctxt "Email type"
+msgid "Payment confirmation"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:16
+#, fuzzy
+#| msgctxt "Shipping method form field label"
+#| msgid "Shipping method"
+msgctxt "Email type"
+msgid "Shipping confirmation"
+msgstr "Método de envío"
+
+#: saleor/dashboard/templatetags/orders.py:18
+msgctxt "Email type"
+msgid "Fulfillment confirmation"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:20
+msgctxt "Email type"
+msgid "Order confirmation"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:47
+#, fuzzy
+#| msgctxt "Dashboard message related to an order"
+#| msgid "Order created from draft order"
+msgctxt "Dashboard message related to an order"
+msgid "Order placed from draft order"
+msgstr "Orden creada desde una orden borrador"
+
+#: saleor/dashboard/templatetags/orders.py:51
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "Payment was voided by %(user_name)s"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:57
+#, fuzzy, python-format
+#| msgctxt "Dashboard message related to a payment"
+#| msgid "Refunded %(amount)s"
+msgctxt "Dashboard message related to an order"
+msgid "Successfully refunded: %(amount)s"
+msgstr "%(amount)s reembolsado"
+
+#: saleor/dashboard/templatetags/orders.py:63
+#, fuzzy, python-format
+#| msgctxt "Dashboard message related to a payment"
+#| msgid "Captured %(amount)s"
+msgctxt "Dashboard message related to an order"
+msgid "Successfully captured: %(amount)s"
+msgstr "%(amount)sretenido"
+
+#: saleor/dashboard/templatetags/orders.py:68
+#, fuzzy
+#| msgctxt "Dashboard message"
+#| msgid "Order manually marked as paid"
+msgctxt "Dashboard message related to an order"
+msgid "Order manually marked as paid"
+msgstr "Pedido marcado manualmente como pagado"
+
+#: saleor/dashboard/templatetags/orders.py:72
+#, fuzzy
+#| msgctxt "Dashboard message"
+#| msgid "Order canceled"
+msgctxt "Dashboard message related to an order"
+msgid "Order was canceled"
+msgstr "Pedido cancelado"
+
+#: saleor/dashboard/templatetags/orders.py:76
+#, fuzzy, python-format
+#| msgctxt "Cancel order form action"
+#| msgid "Restock %(quantity)d item"
+#| msgid_plural "Restock %(quantity)d items"
+msgctxt "Dashboard message related to an order"
+msgid "We restocked %(quantity)d item"
+msgid_plural "We restocked %(quantity)d items"
+msgstr[0] "Reabastecer %(quantity)d elemento"
+msgstr[1] "Reabastecer %(quantity)d elementos"
+
+#: saleor/dashboard/templatetags/orders.py:82
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "%(user_name)s added note: %(note)s"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:88
+#, python-format
+msgctxt "Dashboard message"
+msgid "Fulfillment #%(fulfillment)s canceled by %(user_name)s"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:94
+msgctxt "Dashboard message related to an order"
+msgid "Fulfilled some items"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:98
+#, fuzzy
+#| msgctxt "Dashboard message"
+#| msgid "Order canceled"
+msgctxt "Dashboard message related to an order"
+msgid "Order was placed"
+msgstr "Pedido cancelado"
+
+#: saleor/dashboard/templatetags/orders.py:102
+#, fuzzy
+#| msgctxt "Dashboard message"
+#| msgid "Order manually marked as paid"
+msgctxt "Dashboard message related to an order"
+msgid "Order was fully paid"
+msgstr "Pedido marcado manualmente como pagado"
+
+#: saleor/dashboard/templatetags/orders.py:106
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "%(email_type)s email was sent to the customer (%(email)s)"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:113
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid ""
+"Fulfillment #%(fulfillment)s tracking was updated to %(tracking_number)s by "
+"%(user_name)s"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:121
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "The draft was created by %(user_name)s"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:126
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "%(user_name)s added some products"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:131
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "%(user_name)s removed some products"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:136
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "%(user_name)s placed the order by bypassing oversold items"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:141
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "The order address was updated by %(user_name)s"
+msgstr ""
+
+#: saleor/dashboard/templatetags/orders.py:146
+#, python-format
+msgctxt "Dashboard message related to an order"
+msgid "The payment was failed by %(user_name)s"
+msgstr ""
+
+#: saleor/dashboard/widget/banner/filters.py:10
+#, fuzzy
+#| msgctxt "Category list sorting option"
+#| msgid "name"
+msgctxt "Banner list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/widget/banner/filters.py:19
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Banner name filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/widget/banner/filters.py:22
+#, fuzzy
+#| msgctxt "Collection list filter label"
+#| msgid "Is published"
+msgctxt "Banner list filter label"
+msgid "Is public"
+msgstr "Está publicado"
+
+#: saleor/dashboard/widget/banner/filters.py:27
+msgctxt "Banner list filter label"
+msgid "Is default"
+msgstr ""
+
+#: saleor/dashboard/widget/banner/filters.py:44
+#, fuzzy, python-format
+#| msgctxt "Number of matching records in the dashboard sales list"
+#| msgid "Found %(counter)d matching sale"
+#| msgid_plural "Found %(counter)d matching sales"
+msgctxt "Number of matching records in the dashboard banners list"
+msgid "Found %(counter)d matching banner"
+msgid_plural "Found %(counter)d matching banners"
+msgstr[0] "Se encontró%(counter)d descuento que coincide"
+msgstr[1] "Se encontraron %(counter)d descuentos que coinciden"
+
+#: saleor/dashboard/widget/banner/forms.py:23
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Banner field name"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/widget/banner/forms.py:25
+#, fuzzy
+#| msgctxt "Product image"
+#| msgid "Image"
+msgctxt "Banner field name"
+msgid "Image"
+msgstr "Imagen"
+
+#: saleor/dashboard/widget/banner/forms.py:27
+msgctxt "Banner field name"
+msgid "Alternative text"
+msgstr ""
+
+#: saleor/dashboard/widget/banner/forms.py:29
+#: saleor/dashboard/widget/slider/forms.py:27
+#, fuzzy
+#| msgctxt "Collection list filter label"
+#| msgid "Is published"
+msgctxt "Slider active state"
+msgid "Is public"
+msgstr "Está publicado"
+
+#: saleor/dashboard/widget/banner/forms.py:31
+#: saleor/dashboard/widget/slider/forms.py:29
+#, fuzzy
+#| msgctxt "Is publish filter choice"
+#| msgid "Published"
+msgctxt "Slider active state"
+msgid "Public since"
+msgstr "Publicado"
+
+#: saleor/dashboard/widget/banner/forms.py:33
+#: saleor/dashboard/widget/scene/forms.py:32
+#: saleor/dashboard/widget/slider/forms.py:31
+msgctxt "active_until"
+msgid "Public until"
+msgstr ""
+
+#: saleor/dashboard/widget/banner/forms.py:35
+#: saleor/dashboard/widget/scene/forms.py:34
+#: saleor/dashboard/widget/slider/forms.py:33
+msgctxt "is_default"
+msgid "Use as default"
+msgstr ""
+
+#: saleor/dashboard/widget/banner/views.py:63
+msgctxt "Dashboard message"
+msgid "Nuevo banner añadido"
+msgstr ""
+
+#: saleor/dashboard/widget/banner/views.py:87
+msgctxt "Dashboard message"
+msgid "Banner actualizado"
+msgstr ""
+
+#: saleor/dashboard/widget/banner/views.py:109
+#, python-format
+msgctxt "Dashboard message"
+msgid "Banner eliminado %s"
+msgstr ""
+
+#: saleor/dashboard/widget/benefit/filters.py:10
+#, fuzzy
+#| msgctxt "Category list sorting option"
+#| msgid "name"
+msgctxt "Benefit list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/widget/benefit/filters.py:21
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Benefit name filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/widget/benefit/filters.py:28
+#, fuzzy
+#| msgctxt "Is active filter choice"
+#| msgid "Active"
+msgctxt "Benefit list filter label"
+msgid "Activo"
+msgstr "Activo"
+
+#: saleor/dashboard/widget/benefit/filters.py:33
+msgctxt "Filter empty choice label"
+msgid "Todos"
+msgstr ""
+
+#: saleor/dashboard/widget/benefit/filters.py:46
+#, fuzzy, python-format
+#| msgctxt "Number of matching records in the dashboard menus list"
+#| msgid "Found %(counter)d matching menu"
+#| msgid_plural "Found %(counter)d matching menus"
+msgctxt "Number of matching records in the dashboard benefits list"
+msgid "Found %(counter)d matching benefit"
+msgid_plural "Found %(counter)d matching benefits"
+msgstr[0] "Se encontró %(counter)d menú"
+msgstr[1] "Se encontraron %(counter)d menús"
+
+#: saleor/dashboard/widget/benefit/forms.py:21
+msgctxt "Benefit field name"
+msgid "Nombre"
+msgstr ""
+
+#: saleor/dashboard/widget/benefit/forms.py:25
+msgctxt "Benefit field name"
+msgid "Texto"
+msgstr ""
+
+#: saleor/dashboard/widget/benefit/forms.py:29
+#, fuzzy
+#| msgctxt "Product image"
+#| msgid "Image"
+msgctxt "Benefit field name"
+msgid "Imagen"
+msgstr "Imagen"
+
+#: saleor/dashboard/widget/benefit/forms.py:33
+#, fuzzy
+#| msgctxt "Is active filter choice"
+#| msgid "Active"
+msgctxt "Slider active state"
+msgid "Activo"
+msgstr "Activo"
+
+#: saleor/dashboard/widget/benefit/views.py:50
+msgctxt "Dashboard message"
+msgid "Nuevo benefit añadido"
+msgstr ""
+
+#: saleor/dashboard/widget/benefit/views.py:74
+msgctxt "Dashboard message"
+msgid "Benefit actualizado"
+msgstr ""
+
+#: saleor/dashboard/widget/benefit/views.py:96
+#, python-format
+msgctxt "Dashboard message"
+msgid "Benefit eliminado %s"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/filters.py:10
+#, fuzzy
+#| msgctxt "Category list sorting option"
+#| msgid "name"
+msgctxt "Scene list sorting option"
+msgid "name"
+msgstr "nombre"
+
+#: saleor/dashboard/widget/scene/filters.py:19
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Scene name filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/widget/scene/filters.py:22
+#, fuzzy
+#| msgctxt "Collection list filter label"
+#| msgid "Is published"
+msgctxt "Scene list filter label"
+msgid "Is public"
+msgstr "Está publicado"
+
+#: saleor/dashboard/widget/scene/filters.py:39
+#, fuzzy, python-format
+#| msgctxt "Number of matching records in the dashboard sales list"
+#| msgid "Found %(counter)d matching sale"
+#| msgid_plural "Found %(counter)d matching sales"
+msgctxt "Number of matching records in the dashboard scenes list"
+msgid "Found %(counter)d matching scene"
+msgid_plural "Found %(counter)d matching scenes"
+msgstr[0] "Se encontró%(counter)d descuento que coincide"
+msgstr[1] "Se encontraron %(counter)d descuentos que coinciden"
+
+#: saleor/dashboard/widget/scene/forms.py:22
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Scene field name"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/widget/scene/forms.py:24
+#, fuzzy
+#| msgctxt "Product image"
+#| msgid "Image"
+msgctxt "Scene field name"
+msgid "Image"
+msgstr "Imagen"
+
+#: saleor/dashboard/widget/scene/forms.py:26
+msgctxt "Scene field name"
+msgid "Alternative text"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/forms.py:28
+#, fuzzy
+#| msgctxt "Collection list filter label"
+#| msgid "Is published"
+msgctxt "Scene active state"
+msgid "Is public"
+msgstr "Está publicado"
+
+#: saleor/dashboard/widget/scene/forms.py:30
+#, fuzzy
+#| msgctxt "Is publish filter choice"
+#| msgid "Published"
+msgctxt "Scene active state"
+msgid "Public since"
+msgstr "Publicado"
+
+#: saleor/dashboard/widget/scene/forms.py:52
+msgctxt "Spotlight field name"
+msgid "Scene"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/forms.py:54
+msgctxt "Spotlight field name"
+msgid "X"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/forms.py:56
+msgctxt "Spotlight field name"
+msgid "Y"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/forms.py:58
+#, fuzzy
+#| msgctxt "Dashboard message"
+#| msgid "Updated product %s"
+msgctxt "Spotlight field name"
+msgid "Featured product"
+msgstr "Producto actualizado %s"
+
+#: saleor/dashboard/widget/scene/views.py:58
+msgctxt "Dashboard message"
+msgid "Nuevo scene añadido"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/views.py:79
+msgctxt "Dashboard message"
+msgid "Scene actualizado"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/views.py:99
+#, python-format
+msgctxt "Dashboard message"
+msgid "Scene eliminado %s"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/views.py:128
+msgctxt "Dashboard message"
+msgid "Nuevo spotlight añadido"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/views.py:156
+msgctxt "Dashboard message"
+msgid "Spotlight actualizado"
+msgstr ""
+
+#: saleor/dashboard/widget/scene/views.py:178
+msgctxt "Dashboard message"
+msgid "Scene eliminado"
+msgstr ""
+
+#: saleor/dashboard/widget/slider/filters.py:20
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Slider name filter label"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/widget/slider/filters.py:24
+msgctxt "Slider type filter label"
+msgid "Slider type"
+msgstr ""
+
+#: saleor/dashboard/widget/slider/filters.py:29
+#, fuzzy
+#| msgctxt "Collection list filter label"
+#| msgid "Is published"
+msgctxt "Brand list filter label"
+msgid "Is public"
+msgstr "Está publicado"
+
+#: saleor/dashboard/widget/slider/filters.py:34
+msgctxt "Brand list filter label"
+msgid "Is default"
+msgstr ""
+
+#: saleor/dashboard/widget/slider/filters.py:51
+#, fuzzy, python-format
+#| msgctxt "Number of matching records in the dashboard sales list"
+#| msgid "Found %(counter)d matching sale"
+#| msgid_plural "Found %(counter)d matching sales"
+msgctxt "Number of matching records in the dashboard sliders list"
+msgid "Found %(counter)d matching slider"
+msgid_plural "Found %(counter)d matching sliders"
+msgstr[0] "Se encontró%(counter)d descuento que coincide"
+msgstr[1] "Se encontraron %(counter)d descuentos que coinciden"
+
+#: saleor/dashboard/widget/slider/forms.py:23
+msgctxt "Slider type"
+msgid "Use with"
+msgstr ""
+
+#: saleor/dashboard/widget/slider/forms.py:25
+#, fuzzy
+#| msgctxt "Category list filter label"
+#| msgid "Name"
+msgctxt "Slider name"
+msgid "Name"
+msgstr "Nombre"
+
+#: saleor/dashboard/widget/slider/forms.py:43
+#, fuzzy
+#| msgctxt "Collections"
+#| msgid "Collections"
+msgctxt "Slider for collections"
+msgid "Collections"
+msgstr "Colecciones"
+
+#: saleor/dashboard/widget/slider/forms.py:57
+#, fuzzy
+#| msgctxt "Sale list filter label"
+#| msgid "Categories"
+msgctxt "Slider for categories"
+msgid "Categories"
+msgstr "Categorías"
+
+#: saleor/dashboard/widget/slider/forms.py:71
+msgctxt "Slider for brands"
+msgid "Brands"
+msgstr ""
+
+#: saleor/dashboard/widget/slider/forms.py:89
+msgctxt "Slide field name"
+msgid "Slider"
+msgstr ""
+
+#: saleor/dashboard/widget/slider/forms.py:92
+#, fuzzy
+#| msgctxt "Product image"
+#| msgid "Image"
+msgctxt "Slide field name"
+msgid "Imagen"
+msgstr "Imagen"
+
+#: saleor/dashboard/widget/slider/forms.py:95
+msgctxt "Slide field name"
+msgid "Texto alternativo"
+msgstr ""
+
+#: saleor/dashboard/widget/slider/views.py:74
+#: saleor/dashboard/widget/slider/views.py:101
+#, fuzzy
+#| msgctxt "Sale (discount) message"
+#| msgid "Added sale"
+msgctxt "Slider message"
+msgid "Added slider"
+msgstr "Venta agregada"
+
+#: saleor/dashboard/widget/slider/views.py:119
+#, fuzzy, python-format
+#| msgctxt "Sale (discount) message"
+#| msgid "Removed sale %s"
+msgctxt "Slider message"
+msgid "Removed slider %s"
+msgstr "Venta %s borrada"
+
+#: saleor/dashboard/widget/slider/views.py:142
+msgctxt "Dashboard message"
+msgid "Nuevo slide añadido"
+msgstr ""
+
+#: saleor/dashboard/widget/slider/views.py:170
+msgctxt "Dashboard message"
+msgid "Slide actualizado"
+msgstr ""
+
+#: saleor/dashboard/widget/slider/views.py:192
+msgctxt "Dashboard message"
+msgid "Slider eliminado"
+msgstr ""

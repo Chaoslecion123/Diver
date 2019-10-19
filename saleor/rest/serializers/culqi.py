@@ -1,0 +1,2 @@
+class CulquiSerializer:
+    pass

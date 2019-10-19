@@ -1,0 +1,112 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+{% load mptt_tags %}
+{% load materializecss %}
+{% load static %}
+{% load utils %}
+
+{% block title %}
+  {% trans "Slider" context "Slider list page title" %} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-slider{% endblock %}
+
+{% block menu_content_management_header_class %}active{% endblock %}
+{% block menu_slider_class %}active{% endblock %}
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li>
+      <a href="{% url 'dashboard:slider-list' %}" class="breadcrumbs--ellipsed-item">
+        {% trans "Sliders" context "Dashboard slider list" %}
+      </a>
+    </li>
+    <li class="back-mobile">
+        <a href="{% if slider.pk %}{% url 'dashboard:slider-details' pk=slider.pk %}{% else %}{% url 'dashboard:slider-list' %}{% endif %}">
+          <svg data-src="{% static 'dashboard/images/arrow-left.svg' %}" fill="#fff" width="20px" height="20px" ></svg>
+        </a>
+    </li>
+    <li>
+      <span class="breadcrumbs--ellipsed-item">
+        {% if slider.pk %}
+          {{ slider }}
+        {% else %}
+          {% trans "Add new slider" context "Slider breadcrumbs" %}
+        {% endif %}
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col m12 l9">
+      <div class="card">
+        <form action="." method="POST" enctype="multipart/form-data" novalidate>
+          <div class="card-content card-content-form">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+              <blockquote>
+                {% for non_field_error in form.non_field_errors %}
+                  {{ non_field_error }}
+                {% endfor %}
+              </blockquote>
+            {% endif %}
+            <div class="row">
+                {{ form.name|materializecss }}
+            </div>
+
+            <span class="card-title">
+              {% trans 'Publish' context 'slider form card title: public and default sub form' %}
+            </span>
+
+            <div class="row">
+                {{ form.active_on|materializecss:"s12 m6" }}
+                {{ form.active_until|materializecss:"s12 m6" }}
+            </div>
+
+            <div class="row">
+              {{ form.is_active|materializecss:"pt-0 s12 m6" }}
+              {{ form.is_default|materializecss:"pt-0 s12 m6" }}
+            </div>
+
+            <span class="card-title">
+              {% trans 'Related content' context 'slider form card title: type and related content sub form' %}
+            </span>
+
+            <div class="row">
+              {{ form.type|materializecss:"s12 m6" }}
+            </div>
+
+            {% for form_type, form in type_base_forms.items %}
+              <div class="row voucher-form" data-type="{{ form_type }}">
+                {% for field in form %}
+                  {{ field|materializecss:"input-field s12" }}
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="card-action right-align">
+            {% if slider.pk %}
+              <a href="{% url 'dashboard:slider-details' pk=slider.pk %}" class="btn-flat waves-effect">
+                {% trans "Cancel" context "Dashboard cancel action" %}
+              </a>
+              <button type="submit" class="btn waves-effect">
+                {% trans "Update" context "Dashboard update action" %}
+              </button>
+            {% else %}
+              <a href="{% url 'dashboard:slider-list' %}" class="btn-flat waves-effect">
+                {% trans "Cancel" context "Dashboard cancel action" %}
+              </a>
+              <button type="submit" class="btn waves-effect">
+                {% trans "Create" context "Dashboard create action" %}
+              </button>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col m12 l3 help-box"></div>
+  </div>
+{% endblock %}

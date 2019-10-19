@@ -1,0 +1,26 @@
+@import "~components/_styles/themes/default";
+
+@className: ~"@{diver-prefix}-header-carousel";
+
+.@{className} {
+  .VueCarousel-pagination {
+    .VueCarousel-dot-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .VueCarousel-dot {
+      button {
+        outline: 0 none;
+        background-color: #ffffff !important;
+      }
+      &.VueCarousel-dot--active {
+        button {
+          background-color: #bdbdbd !important;
+        }
+      }
+    }
+  }
+}

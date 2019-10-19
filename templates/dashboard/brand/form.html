@@ -1,0 +1,114 @@
+{% extends 'dashboard/base.html' %}
+{% load materializecss %}
+{% load i18n %}
+{% load static %}
+{% load status %}
+
+{% block title %}
+{% if brand.pk %}
+{{ brand }}
+{% else %}
+{% trans 'Add new brand' %}
+{% endif %}
+- {% trans 'Brands' %}
+- {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-brands{% endblock %}
+
+{% block menu_products_header_class %}active{% endblock %}
+{% block menu_brands_class %}active{% endblock %}
+
+{% block page_title %}{% if brand.pk %}{{ brand }}{% else %}{% trans 'Add new brand' %}{% endif %}{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs breadcrumbs--history">
+  <li><a href="{% url "dashboard:brand-list" %}" class="breadcrumb">{% trans "Brands" %}</a></li>
+  <li class="back-mobile">
+    <a href="{% url "dashboard:brand-list" %}" class="breadcrumb">
+      <svg data-src="{% static 'dashboard/images/arrow-left.svg' %}" fill="#fff" width="20px" height="20px" ></svg>
+    </a>
+  </li>
+  <li><span
+      class="breadcrumbs--ellipsed-item">{% if brand.pk %}{{ brand }}{% else %}{% trans 'Add new brand' %}{% endif %}</span>
+  </li>
+</ul>
+{% endblock %}
+
+{% block header_extra %}
+{% if brand.pk %}
+<a class="dropdown-button right" href="#" data-activates="brand-delete" data-constrainwidth="false">
+  <svg data-src="{% static 'dashboard/images/more-vert.svg' %}" height="24" width="24" ></svg>
+</a>
+<ul id="brand-delete" class="dropdown-content">
+  <li>
+    <a class="modal-trigger-custom" href="#base-modal" data-href="{% url 'dashboard:brand-delete' pk=brand.pk %}">
+      {% trans "Remove brand" context "Brand action" %}
+    </a>
+  </li>
+
+  {% comment %}
+  {# There is no brand page in quimder #}
+  <li>
+    <a href="{{ brand.get_absolute_url }}">
+      {% trans "View on site" context "Brand action" %}
+    </a>
+  </li>
+  {% endcomment %}
+</ul>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col m12 l9">
+    <div class="card">
+      <form method="post" id="form-brand" enctype="multipart/form-data" novalidate>
+        <div class="card-content card-content-form">
+          {% csrf_token %}
+          <div class="row">
+            {{ form.name|materializecss }}
+          </div>
+          {% comment %}
+          {# This filed will not be used #}
+          <div class="row">
+            {{ form.products|materializecss }}
+          </div>
+          {% endcomment %}
+          <div class="row">
+            {{ form.image|materializecss }}
+          </div>
+          <div class="row">
+            {{ form.color|materializecss }}
+          </div>
+          <span class="card-title">
+            {% trans 'Promotion' context 'Brand form card title: promotion sub form' %}
+          </span>
+          <div class="row">
+            {{ form.is_featured|materializecss }}
+          </div>
+          {% include "dashboard/includes/_google_preview.html" with object=brand form=form %}
+        </div>
+        <div class="card-action right-align">
+          <a href="{% url 'dashboard:brand-list' %}" class="btn btn-flat">
+            {% trans "Cancel" context "Brand secondary action" %}</a>
+          {% if brand.pk %}
+          <button type="submit" class="btn btn-flat primary">
+            {% trans "Update" context "Brand detail action" %}
+          </button>
+          {% else %}
+          <button type="submit" class="btn btn-flat primary">
+            {% trans "Create" context "Brand detail action" %}
+          </button>
+          {% endif %}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block custom_js %}
+{{ block.super }}
+<script src="{% static 'colorfield/jscolor/jscolor.min.js' %}"></script>
+{% endblock %}

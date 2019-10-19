@@ -1,0 +1,55 @@
+/*
+::-webkit-scrollbar {
+    width: @scroll-bar-width;
+    height: @scroll-bar-width;
+    float: right;
+}
+
+::-webkit-scrollbar-track {
+    padding: 5px 0;
+    box-shadow: transparent;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    // background-color: rgba(@d-blue, 0.25);
+    background-color: rgba(33, 33, 33, 0.1);
+    border-radius: 4px;
+    &:hover {
+        // background-color: rgba(@d-blue, 0.75);
+        background-color: rgba(33, 33, 33, 0.35);
+    }
+}
+
+.vb > .vb-dragger {
+    z-index: 5;
+    width: @scroll-bar-width;
+    right: 0;
+    padding: 5px 0 5px 0;
+}
+
+.vb > .vb-dragger > .vb-dragger-styler {
+    backface-visibility: hidden;
+    transition: background-color 100ms ease-out, margin 100ms ease-out, height 100ms ease-out;
+    background-color: rgba(33, 33, 33, 0.1);
+    border-radius: 4px;
+    height: 100%;
+    display: block;
+}
+
+.vb.vb-scrolling-phantom > .vb-dragger > .vb-dragger-styler {
+    background-color: rgba(33, 33, 33, 0.35);
+}
+
+.vb > .vb-dragger:hover > .vb-dragger-styler {
+    background-color: rgba(33, 33, 33, 0.35);
+}
+
+.vb.vb-dragging > .vb-dragger > .vb-dragger-styler {
+    background-color: rgba(33, 33, 33, 0.35);
+}
+
+.vb.vb-dragging-phantom > .vb-dragger > .vb-dragger-styler {
+    background-color: rgba(33, 33, 33, 0.35);
+}
+*/

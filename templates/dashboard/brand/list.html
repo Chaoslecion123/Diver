@@ -1,0 +1,110 @@
+{% extends 'dashboard/base.html' %}
+
+{% load i18n %}
+{% load materializecss %}
+{% load static %}
+{% load status %}
+{% load utils %}
+
+{% block title %}
+{% trans "Brands" context "Brands list page title "%} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-brands{% endblock %}
+
+{% block menu_products_header_class %}active{% endblock %}
+{% block menu_brands_class %}active{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs breadcrumbs--history">
+  <li class="visible-s"><span>{% trans "Brands" %}</span></li>
+</ul>
+{% endblock %}
+
+{% block header_extra %}
+<div class="btn-fab-fixed">
+  <a href="{% url 'dashboard:brand-add' %}" class="btn-fab-default waves-effect waves-light"
+    title="{% trans 'Add brand' context 'Brands list add button text' %}">
+    <svg data-src="{% static 'dashboard/images/add.svg' %}" ></svg>
+  </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col s12 l9">
+    {% if brands %}
+    <div class="card">
+      <div class="data-table-container">
+        <table class="bordered highlight responsive data-table data-table-description">
+          <thead>
+            <tr>
+              <th>
+                {% trans "Logo" context "Brand table header" %}
+              </th>
+              {% trans "Name" context "Brands list table header name" as label %}
+              {% sorting_header 'name' label is_wide=True %}
+              <th>
+                {% trans "Number of products" context "Brand table header" %}
+              </th>
+              {% trans "Featured" context "Brands list table header name" as label %}
+              {% sorting_header 'featured' label is_wide=False %}
+
+              {% trans "Color" context "Products list table header" as label %}
+              {% sorting_header 'color' label is_wide=False %}
+            </tr>
+          </thead>
+          {% for brand in brands %}
+          <tbody>
+            <tr data-action-go="{% url 'dashboard:brand-update' brand.pk %}">
+              <td class="avatar">
+                <img src="{{ brand.image.thumbnail.126x60 }}" alt="{{ brand.name}}">
+              </td>
+              <td class="nowrap">
+                {{ brand.name }}
+              </td>
+              <td class="nowrap">
+                {% if brand.products %}
+                {% trans "Products: " %} {{ brand.products.count }}
+                {% else %}
+                -
+                {% endif %}
+              </td>
+              <td class="nowrap" style="pointer-events:none;">
+                <input id="id_{{brand.pk}}_is_featured" name="is_featured" class="filled-in green" type="checkbox"
+                  {% if brand.is_featured %}checked="checked" {% endif %}>
+                <label for="id_{{brand.pk}}_is_featured"></label>
+              </td>
+              <td class="nowrap">
+                <div
+                  style="margin-top:5px;display:inline-block;height:20px;width:20px;border-radius:2px;border:2px solid #212121;background-color:{{ brand.color }};">
+                </div>
+              </td>
+              <td class="nowrap">
+                {{ brand.color }}
+              </td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+    {% else %}
+    {% if is_empty %}
+    {% include 'dashboard/brand/zero_page.html' %}
+    {% else %}
+    <div class="col s12">
+      <div class="not-found">
+        <p class="grey-text">
+          {% trans "No brands found." context "Empty brand list message" %}
+        </p>
+      </div>
+    </div>
+    {% endif %}
+    {% endif %}
+  </div>
+  <div class="col s12 l3" id="filters">
+    {% if not is_empty %}{% filters filter_set %}{% endif %}
+  </div>
+</div>
+{% endblock %}

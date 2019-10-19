@@ -1,0 +1,103 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+{% load materializecss %}
+{% load static %}
+{% load utils %}
+{% load widget_images %}
+
+{% block title %}
+  {% trans "Beneficios" context "Benefit list page title" %} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-benefits{% endblock %}
+
+{% block menu_content_management_header_class %}active{% endblock %}
+{% block menu_benefit_class %}active{% endblock %}
+
+{% block header_menu %}
+  {{ block.super }}
+{% endblock %}
+
+{% block header_extra %}
+  <div class="btn-fab-fixed">
+    <a href="{% url 'dashboard:benefit-create' %}" class="btn-fab-default waves-effect waves-light" title="{% trans 'Add category' context 'Benefit list add button text' %}">
+      <svg data-src="{% static 'dashboard/images/add.svg' %}"></svg>
+    </a>
+  </div>
+{% endblock %}
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li class="visible-s">
+      <span>
+        {% trans "Beneficios" context "Dashboard benefits list" %}
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="benefits row">
+    <div class="col s12 l9">
+      {% if benefits %}
+        <div class="card">
+          <div class="data-table-container">
+            <table class="bordered highlight responsive data-table data-table-description">
+              <thead>
+                <tr>
+                  <th>
+                    {% trans "Logo" context "Benefit list table header is active" %}
+                  </th>
+                  {% trans "Nombre" context "Benefit list table header name" as label %}
+                  {% sorting_header 'name' label is_wide=True %}
+
+                  <th>
+                    {% trans "Activo" context "Benefit list table header is active" %}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for benefit in benefits %}
+                  <tr data-action-go="{% url 'dashboard:benefit-edit' pk=benefit.pk %}">
+                    <td class="avatar">
+                      <img src="{% get_benefit_thumbnail benefit size='40x40' method='thumbnail' %}"
+                          srcset="
+                            {% get_benefit_thumbnail benefit size='40x40' method='thumbnail' %} 1x,
+                            {% get_benefit_thumbnail benefit size='80x80' method='thumbnail' %} 2x"
+                          alt="{{ benefit.name }}">
+                    </td>
+                    <td>
+                      {{ benefit.name }}
+                    </td>
+                    <td class="nowrap" style="pointer-events:none;">
+                      <input id="id_{{slider.pk}}_active" name="active" class="filled-in green" type="checkbox" {% if benefit.is_active %}checked="checked"{% endif %}>
+                      <label for="id_{{benefit.pk}}_active"></label>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        {% paginate benefits %}
+      {% else %}
+        {% if is_empty %}
+          {% include './zero_page.html' %}
+        {% else %}
+          <div class="col s12">
+            <div class="not-found">
+              <p class="grey-text">
+                {% trans "No se encontraron beneficios." context "Empty benefit list message" %}
+              </p>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% if not is_empty %}
+    <div class="col s12 l3" id="filters">
+      {% filters filter_set %}
+    </div>
+    {% endif %}
+  </div>
+{% endblock %}

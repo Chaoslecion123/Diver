@@ -1,0 +1,20 @@
+{% load i18n %}
+
+{% block subject %}
+  {% trans "Welcome to Quimder" context "Account create e-mail subject" %}
+{% endblock %}
+
+{% block plain %}
+{% include 'templated_email/shared/_header.email' %}
+{% blocktrans context "Account create e-mail text" %}
+Welcome to the {{ domain }}.<br/>
+
+You're receiving this e-mail because you or someone else has created an account with us.<br/>
+{% endblocktrans %}
+
+{% include 'templated_email/shared/_footer.email' %}
+{% endblock %}
+
+{% block html %}
+{% include 'templated_email/compiled/account_create.html' %}
+{% endblock %}

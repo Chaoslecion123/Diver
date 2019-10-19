@@ -1,0 +1,27 @@
+{% extends "dashboard/base_modal.html" %}
+
+{% load i18n %}
+
+{% block form_class %}{% endblock %}
+
+{% block action_url %}
+{% url 'dashboard:brand-delete' pk=brand.pk %}
+{% endblock %}
+
+{% block title %}
+{% blocktrans trimmed context "Modal remove brand text" %}
+  Remove brand {{ brand }}
+{% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+  <div class="col s12">
+    {% blocktrans trimmed context "Modal remove brand text" %}
+      Are you sure you want to remove brand <strong>{{ brand }}</strong>?
+    {% endblocktrans %}
+  </div>
+{% endblock content %}
+
+{% block primary_action %}
+{% trans "Remove" context "Dashboard delete action" %}
+{% endblock %}

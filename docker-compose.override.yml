@@ -1,0 +1,43 @@
+version: "2"
+
+services:
+  web:
+    ports:
+      - 8000:8000
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./saleor/:/app/saleor:Z
+      - ./templates/:/app/templates:Z
+      - ./webpack-bundle.json:/app/webpack-bundle.json:Z
+      - ./frontend/webpack-stats.json:/app/frontend/webpack-stats.json:Z
+      - ./tests/:/app/tests
+      # prevents overshadowing of build-time assets
+      # - /app/saleor/static/assets
+      # - /app/templates/templated_email/compiled
+      # shared volume between celery and web for media
+      - saleor-media:/app/media
+
+  db:
+    ports:
+      - 5432:5432
+
+  redis:
+    ports:
+      - 6379:6379
+
+  celery:
+    volumes:
+      - ./saleor/:/app/saleor:Z
+      - ./templates/:/app/templates:Z
+      # prevents overshadowing of build-time assets
+      # - /app/templates/templated_email/compiled
+      # shared volume between celery and web for media
+      - saleor-media:/app/media
+
+  # search:
+  #   ports:
+  #     - 9200:9200
+  #     - 9300:9300
+
+volumes:
+  saleor-media:

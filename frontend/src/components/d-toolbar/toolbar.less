@@ -1,0 +1,49 @@
+@import "~components/_styles/themes/default";
+
+@className: ~"@{diver-prefix}-toolbar";
+
+.@{className} {
+  .container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .logo {
+    height: 100%;
+    margin: 0;
+    img {
+      height: 100%;
+    }
+  }
+
+  .v-toolbar__side-icon {
+    cursor: pointer;
+  }
+
+  .v-toolbar__items {
+    &.d-overide {
+      flex: 1 1 auto;
+
+      .v-menu.d-search-menu {
+        flex: 1 1 auto;
+      }
+    }
+
+    .d-btn {
+      min-width: initial;
+      height: 36px !important;
+      margin-right: 2 * @size-unit!important;
+
+      &:last-child {
+        margin-right: 0 !important;
+      }
+
+      &.d-btn--circle {
+        height: 48px !important;
+        width: 48px !important;
+        padding: 0;
+        border-radius: 50%;
+      }
+    }
+  }
+}

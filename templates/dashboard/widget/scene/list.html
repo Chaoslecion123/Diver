@@ -1,0 +1,95 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+{% load mptt_tags %}
+{% load materializecss %}
+{% load static %}
+{% load utils %}
+
+{% block title %}
+  {% trans "Categories" context "Category list page title" %} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-scenes{% endblock %}
+
+{% block menu_content_management_header_class %}active{% endblock %}
+{% block menu_scene_class %}active{% endblock %}
+
+{% block header_menu %}
+  {{ block.super }}
+{% endblock %}
+
+{% block header_extra %}
+  <div class="btn-fab-fixed">
+    <a href="{% url 'dashboard:scene-create' %}" class="btn-fab-default waves-effect waves-light" title="{% trans 'Add category' context 'Category list add button text' %}">
+      <svg data-src="{% static 'dashboard/images/add.svg' %}"></svg>
+    </a>
+  </div>
+{% endblock %}
+
+
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li class="visible-s">
+      <span>
+        {% trans "Scenes" context "Dashboard scenes list" %}
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="scenes row">
+    <div class="col s12 l9">
+      {% if scenes %}
+        <div class="card">
+          <div class="data-table-container">
+            <table class="bordered highlight responsive data-table data-table-description">
+              <thead>
+                <tr>
+                  {% trans "Name" context "Category list table header name" as label %}
+                  {% sorting_header 'name' label is_wide=True %}
+
+                  <th>
+                    {% trans "Active" context "Slider list table header is active" %}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for scene in scenes %}
+                  <tr data-action-go="{% url 'dashboard:scene-details' pk=scene.pk %}">
+                    <td>
+                      {{ scene.name }}
+                    </td>
+                    <td class="nowrap" style="pointer-events:none;">
+                      <input id="id_{{slider.pk}}_active" name="active" class="filled-in green" type="checkbox" {% if scene.is_active %}checked="checked"{% endif %}>
+                      <label for="id_{{scene.pk}}_active"></label>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        {% paginate scenes %}
+      {% else %}
+        {% if is_empty %}
+          {% include './zero_page.html' %}
+        {% else %}
+          <div class="col s12">
+            <div class="not-found">
+              <p class="grey-text">
+                {% trans "No se encontraron baners." context "Empty category list message" %}
+              </p>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% if not is_empty %}
+    <div class="col s12 l3" id="filters">
+      {% filters filter_set %}
+    </div>
+    {% endif %}
+  </div>
+{% endblock %}

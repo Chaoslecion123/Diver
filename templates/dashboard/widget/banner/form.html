@@ -1,0 +1,118 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+{% load mptt_tags %}
+{% load materializecss %}
+{% load static %}
+{% load utils %}
+
+{% block title %}
+  {% trans "Categories" context "Category list page title" %} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-banners{% endblock %}
+
+{% block menu_content_management_header_class %}active{% endblock %}
+{% block menu_banner_class %}active{% endblock %}
+
+{% block header_menu %}
+  {{ block.super }}
+{% endblock %}
+
+{% block header_extra %}
+{% if banner.pk %}
+<a class="dropdown-button right" href="#" data-activates="banner-delete" data-constrainwidth="false">
+  <svg data-src="{% static 'dashboard/images/more-vert.svg' %}" height="24" width="24" ></svg>
+</a>
+<ul id="banner-delete" class="dropdown-content">
+  <li>
+    <a class="modal-trigger-custom" href="#base-modal" data-href="{% url 'dashboard:banner-delete' pk=banner.pk %}">
+      {% trans "Remove banner" context "Voucher action" %}
+    </a>
+  </li>
+</ul>
+{% endif %}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li>
+      <a href="{% url 'dashboard:banner-list' %}">
+        {% trans "Banners" context "Dashboard banners list" %}
+      </a>
+    </li>
+    <li class="back-mobile">
+      <a href="{% url 'dashboard:banner-list' %}">
+        <svg data-src="{% static 'dashboard/images/arrow-left.svg' %}" fill="#fff" width="20px" height="20px" ></svg>
+      </a>
+    </li>
+    <li>
+      <span class="breadcrumbs--ellipsed-item">
+        {% if banner.pk %}
+          {{ banner }}
+        {% else %}
+          {% trans "Agregar nuevo banner" context "Sale (discount) breadcrumbs" %}
+        {% endif %}
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col m12 l9">
+      <div class="card">
+        <form method="post" enctype="multipart/form-data" id="form-sales" novalidate>
+          <div class="card-content card-content-form">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+              <blockquote>
+                {% for non_field_error in form.non_field_errors %}
+                  {{ non_field_error }}
+                {% endfor %}
+              </blockquote>
+            {% endif %}
+            <div class="row">
+              {{ form.name|materializecss }}
+            </div>
+            <div class="row">
+              {{ form.image|materializecss }}
+            </div>
+            <div class="row">
+              {{ form.alt|materializecss }}
+            </div>
+
+            <span class="card-title">
+              {% trans 'Publish' context 'slider form card title: public and default sub form' %}
+            </span>
+
+            <div class="row">
+                {{ form.active_on|materializecss:"s12 m6" }}
+                {{ form.active_until|materializecss:"s12 m6" }}
+            </div>
+
+            <div class="row">
+              {{ form.is_active|materializecss:"pt-0 s12 m6" }}
+              {{ form.is_default|materializecss:"pt-0 s12 m6" }}
+            </div>
+          </div>
+
+          <div class="card-action right-align">
+            <a href="{% url 'dashboard:banner-list' %}" class="btn-flat waves-effect">
+              {% trans "Cancel" context "Dashboard cancel action" %}
+            </a>
+            {% if banner.pk %}
+              <button type="submit" class="btn waves-effect">
+                {% trans "Update" context "Dashboard update action" %}
+              </button>
+            {% else %}
+              <button type="submit" class="btn waves-effect">
+                {% trans "Create" context "Dashboard create action" %}
+              </button>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col m12 l3 help-box"></div>
+  </div>
+{% endblock %}

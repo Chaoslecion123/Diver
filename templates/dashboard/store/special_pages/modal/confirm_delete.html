@@ -1,0 +1,27 @@
+{% extends "dashboard/base_modal.html" %}
+
+{% load i18n %}
+
+{% block form_class %}{% endblock %}
+
+{% block action_url %}
+{% url "dashboard:special-page-delete" site_settings_pk=site_settings_pk pk=special_page.pk %}
+{% endblock %}
+
+{% block title %}
+{% blocktrans trimmed context "Modal delete special page text" %}
+  Delete special page {{ special_page }}
+{% endblocktrans %}
+{% endblock title %}
+
+{% block content %}
+  <div class="col s12">
+    {% blocktrans trimmed context "Modal delete special page text" %}
+      Are you sure you want to remove special page <strong>{{ special_page }}</strong>?
+    {% endblocktrans %}
+  </div>
+{% endblock content %}
+
+{% block primary_action %}
+{% trans "Remove" context "Dashboard delete action" %}
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+{% load mptt_tags %}
+{% load materializecss %}
+{% load static %}
+{% load utils %}
+
+{% block title %}
+  {% trans "Slide" context "Slide list page title" %} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-slide{% endblock %}
+
+{% block menu_storefront_slider_class %}active{% endblock %}
+
+{% block header_menu %}
+  {{ block.super }}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li>
+      <a href="{% url 'dashboard:slider-list' %}" class="breadcrumbs--ellipsed-item">
+        {% trans "Sliders" context "Dashboard slider list" %}
+      </a>
+    </li>
+    <li class="back-mobile">
+      <a href="{% url  'dashboard:slider-details' pk=slider.pk %}">
+        <svg data-src="{% static 'dashboard/images/arrow-left.svg' %}" fill="#fff" width="20px" height="20px" ></svg>
+      </a>
+    </li>
+    <li>
+      <a href="{% url  'dashboard:slider-details' pk=slider.pk %}">
+        {{ slider }}
+      </a>
+    </li>
+    <li>
+      <span class="breadcrumbs--ellipsed-item">
+        {% if slide.pk %}
+          {{ slide }}
+        {% else %}
+          {% trans "Agregar nuevo slide" context "Slide breadcrumbs" %}
+        {% endif %}
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col m12 l9">
+      <div class="card">
+        <form action="." method="post" enctype="multipart/form-data" novalidate>
+          <div class="card-content card-content-form">
+            {% csrf_token %}
+            {{ form.slider }}
+
+            {% if form.non_field_errors %}
+              <blockquote>
+                {% for non_field_error in form.non_field_errors %}
+                  {{ non_field_error }}
+                {% endfor %}
+              </blockquote>
+            {% endif %}
+
+            <div class="row">
+                {{ form.image|materializecss }}
+            </div>
+
+            <div class="row">
+                {{ form.alt|materializecss }}
+            </div>
+          </div>
+
+          <div class="card-action right-align">
+            <a href="{% url  'dashboard:slider-details' pk=slider.pk %}" class="btn-flat waves-effect">
+              {% trans "Cancel" context "Dashboard cancel action" %}
+            </a>
+            {% if slide.pk %}
+              <button type="submit" class="btn waves-effect">
+                {% trans "Update" context "Dashboard update action" %}
+              </button>
+            {% else %}
+              <button type="submit" class="btn waves-effect">
+                {% trans "Create" context "Dashboard create action" %}
+              </button>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col m12 l3 help-box"></div>
+  </div>
+{% endblock %}

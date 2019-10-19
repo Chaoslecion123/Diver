@@ -1,0 +1,29 @@
+@import "~components/_styles/themes/default";
+
+@menuClassName: ~"@{diver-prefix}-account-menu";
+@itemClassName: ~"@{menuClassName}-item";
+
+.@{menuClassName} {
+  .@{itemClassName} {
+    .v-list__tile {
+      border-left: 0;
+      transition: border-left 0.15s ease-in-out;
+    }
+
+    .v-list__tile--active {
+      color: var(--v-accent-base) !important;
+      caret-color: var(--v-accent-base) !important;
+      border-left: 2px solid var(--v-accent-base);
+    }
+  }
+  &.d-account-menu-drawer {
+    .@{itemClassName} {
+      .v-list__tile--active {
+        background-color: var(--v-accent-base) !important;
+        color: #fff !important;
+        caret-color: #fff !important;
+        border-left: 2px solid #fff;
+      }
+    }
+  }
+}

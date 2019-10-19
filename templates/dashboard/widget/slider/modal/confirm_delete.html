@@ -1,0 +1,27 @@
+{% extends "dashboard/base_modal.html" %}
+
+{% load i18n %}
+
+{% block form_class %}{% endblock %}
+
+{% block action_url %}
+{% url "dashboard:slider-delete" pk=slider.pk %}
+{% endblock %}
+
+{% block title %}
+{% blocktrans trimmed context "Modal remove stripe text" %}
+  Delete slider {{ slider }}
+{% endblocktrans %}
+{% endblock title %}
+
+{% block content %}
+  <div class="col s12">
+    {% blocktrans trimmed context "Modal remove slider text" %}
+      Are you sure you want to remove slider <strong>{{ slider }}</strong>?
+    {% endblocktrans %}
+  </div>
+{% endblock content %}
+
+{% block primary_action %}
+{% trans "Remove" context "Dashboard delete action" %}
+{% endblock %}

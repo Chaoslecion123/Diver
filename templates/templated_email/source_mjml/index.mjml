@@ -1,0 +1,130 @@
+<mjml>
+  <mj-body background-color="#fce7b4" font-size="13px">
+    <mj-section background-color="#fff" padding-bottom="20px" padding-top="20">
+      <mj-column width="100%">
+        <mj-image src="logo_quimder02.jpeg" alt="" align="center" border="none" width="150px" padding-left="0px" padding-right="0px" padding-bottom="10px" padding-top="10"></mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white" padding-bottom="0px" padding-top="0">
+      <mj-column width="100%">
+        <mj-text align="center" color="#F78322" font-size="25px" color="black" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10">¡Tu orden fue confirmada! </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white" padding-bottom="5px" padding-top="0">
+      <mj-column width="100%">
+        <mj-text align="left" color="#F78322" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10"><span style="font-size:20px; font-weight:bold">¡Hola, Nombre del [[FirstName]] / [[Correo]]!</span> <br/> </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white" padding-bottom="0px" padding-top="0">
+      <mj-column width="100%">
+        <mj-text align="left" color="#F78322" font-size="18px" color="black" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10">
+          <p style="color:black; tex">¡GRACIAS <br>POR COMPRAR EN QUIMDER.COM!</p>
+          <p style="font-size:16px; color:black">Tu orden ha sido confirmada y te estaremos informando cuando tus pedidos hayan sido despachados.</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F78322" padding-bottom="15px" padding-top="15">
+      <mj-column>
+        <mj-text align="center" color="#FFF" font-size="15px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="20"><strong>Dirección de Envío</strong></mj-text>
+        <mj-text align="center" color="#FFF" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10">[[OrderNumber]]</mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text align="center" color="#FFF" font-size="15px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="20"><strong>Método de pago</strong></mj-text>
+        <mj-text align="center" color="#FFF" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10">[[OrderDate]]</mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text align="center" color="#FFF" font-size="20px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="20"><strong>Order ID</strong></mj-text>
+        <mj-text align="center" color="#FFF" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10">[[TotalPrice]]</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F78322" padding-bottom="15px" padding-top="15">
+      <mj-column>
+        <mj-text align="center" color="#FFF" font-size="15px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="20"><strong>Tipo de comprobante</strong></mj-text>
+        <mj-text align="center" color="#FFF" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10">[[OrderNumber]]</mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text align="center" color="#FFF" font-size="15px" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="20"><strong>Método de envío</strong></mj-text>
+        <mj-text align="center" color="#FFF" font-size="13px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="10">[[OrderDate]]</mj-text>
+      </mj-column>
+      <mj-column> </mj-column>
+    </mj-section>
+    <mj-section background-color="white">
+      <mj-column>
+        <mj-text align="left" color="#F78322" font-size="18px" color="black" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10">
+          <p style="color:black; color:#F78322; font-weight:bold;"> DETALLE DE TU COMPRA: </p>
+          <p style="font-size:16px; color:black">Tener en cuenta que si tus productos están en distintos almacenes serán enviados en paquetes y fechas distintas, por ello algunos pueden llegar primero y posteriormente los demás, ver las fechas para que pueda estar al tanto.</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white">
+      <mj-column>
+        <mj-table>
+          <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0;">
+            <th style="padding: 0 15px 0 0;">Producto</th>
+            <th style="padding: 0 15px;">Precio</th>
+            <th style="padding: 0 0 0 15px;">Cantidad</th>
+     
+            <th style="padding: 0 0 0 20px;">Total</th>
+          </tr>
+          <tr>
+            <td style="padding: 0 15px 0 0;">[[TotalPrice]]</td>
+            <td style="padding: 0 15px;">[[TotalPrice]]</td>
+            <td style="padding: 0 0 0 15px;">[[TotalPrice]]</td>
+            <td style="padding: 0 0 0 15px;">[[TotalPrice]]</td>
+          </tr>
+          <tr>
+            <td style="padding: 0 15px 0 0;">[[TotalPrice]]</td>
+            <td style="padding: 0 15px;">[[TotalPrice]]</td>
+            <td style="padding: 0 0 0 15px;">[[TotalPrice]]</td>
+            <td style="padding: 0 0 0 15px;">[[TotalPrice]]</td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white">
+      <mj-column>
+        <mj-table>
+          <tr style="text-align:left;padding:15px 0;">
+            <th style="padding: 0 15px 0 0;">Sub-Total</th>
+            <td style="padding: 0 15px;">[TotalPrice]]</td>
+          </tr>
+          <tr style="text-align:left;padding:15px 0;">
+            <th style="padding: 0 15px 0 0;">Envío</th>
+            <td style="padding: 0 15px;">[TotalPrice]]</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0;">
+            <th style="padding: 0 15px 0 0;">Descuento</th>
+            <td style="padding: 0 15px;">[TotalPrice]]</td>
+          </tr>
+          <tr style="text-align:left;padding:15px 0;">
+            <th style="padding: 0 15px 0 0; font-size:18px; ">TOTAL</th>
+            <td style="padding: 0 15px;">[TotalPrice]]</td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="white">
+      <mj-column>
+        <mj-text align="left" color="#F78322" font-size="18px" color="black" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10">
+          <p style="color:black; color:#F78322; font-weight:bold;"> AVISO LEGAL: </p>
+          <p style="font-size:16px; color:black">Te recordamos que se realizarán los intentos de entrega que permita tu método de envío. Si tienes algún inconveniente para recibir tu pedido, por favor comunícate con nosotros.</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F78322" padding-bottom="20px" padding-top="20">
+      <mj-column>
+        <mj-text align="center" color="#F78322" font-size="18px" color="black" font-family="Ubuntu, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px" padding-bottom="10px" padding-top="10">
+          <p style="font-size:16px; color:white">Si tienes alguna pregunta, comunícate con nuestro equipo de Servicio al Cliente al teléfono (01) 5335887 </p>
+          <p style="font-size:16px; color:white"> o escríbenos a ventas@boticaquimder.com</p>
+          <p style="font-size:16px; color:white"> ¡Esperamos verte nuevamente pronto! Muchas gracias</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fff" padding-bottom="5px" padding-top="0">
+      <mj-column width="100%">
+        <mj-divider border-color="#ffffff" border-width="2px" border-style="solid" padding-left="20px" padding-right="20px" padding-bottom="0px" padding-top="0"></mj-divider>
+        <mj-image src="logo_quimder.png" alt="" align="center" border="none" width="150px" padding-left="0px" padding-right="0px" padding-bottom="10px" padding-top="10"></mj-image>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

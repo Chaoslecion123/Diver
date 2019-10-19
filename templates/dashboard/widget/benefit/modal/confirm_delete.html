@@ -1,0 +1,27 @@
+{% extends "dashboard/base_modal.html" %}
+
+{% load i18n %}
+
+{% block form_class %}{% endblock %}
+
+{% block action_url %}
+{% url "dashboard:benefit-delete" pk=benefit.pk %}
+{% endblock %}
+
+{% block title %}
+{% blocktrans trimmed context "Modal remove benefit text" %}
+  Eliminar beneficio "{{ benefit }}"
+{% endblocktrans %}
+{% endblock title %}
+
+{% block content %}
+  <div class="col s12">
+    {% blocktrans trimmed context "Modal remove benefit text" %}
+      ¿Está seguro de eliminar el beneficio <strong>{{ benefit }}</strong>?
+    {% endblocktrans %}
+  </div>
+{% endblock content %}
+
+{% block primary_action %}
+{% trans "Eliminar" context "Dashboard delete action" %}
+{% endblock %}

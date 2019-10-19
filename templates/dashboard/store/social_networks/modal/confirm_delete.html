@@ -1,0 +1,27 @@
+{% extends "dashboard/base_modal.html" %}
+
+{% load i18n %}
+
+{% block form_class %}{% endblock %}
+
+{% block action_url %}
+{% url "dashboard:social-network-delete" site_settings_pk=site_settings_pk pk=social_network.pk %}
+{% endblock %}
+
+{% block title %}
+{% blocktrans trimmed context "Modal delete social network text" %}
+  Delete social network {{ social_network }}
+{% endblocktrans %}
+{% endblock title %}
+
+{% block content %}
+  <div class="col s12">
+    {% blocktrans trimmed context "Modal delete social network text" %}
+      Are you sure you want to remove social network <strong>{{ social_network }}</strong>?
+    {% endblocktrans %}
+  </div>
+{% endblock content %}
+
+{% block primary_action %}
+{% trans "Remove" context "Dashboard delete action" %}
+{% endblock %}

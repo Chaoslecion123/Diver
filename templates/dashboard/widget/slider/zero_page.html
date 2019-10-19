@@ -1,0 +1,18 @@
+{% extends 'dashboard/base_zero_page.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "No slider found." %}{% endblock %}
+{% block content %}
+  {% static "dashboard/images/add.svg" as img_path %}
+  <p>
+    {% blocktrans %}
+      Sliders are engaging visual content, ideal to show our customers exciting news about our products.
+    {% endblocktrans %}
+  </p>
+  <p>
+    {% blocktrans %}
+      You can create sliders by using the <span class="btn-fab-presentation"><svg data-src="{{ img_path }}"></svg></span> button.
+    {% endblocktrans %}
+  </p>
+{% endblock %}

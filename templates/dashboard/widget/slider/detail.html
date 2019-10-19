@@ -1,0 +1,129 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+{% load mptt_tags %}
+{% load materializecss %}
+{% load static %}
+{% load utils %}
+{% load widget_images %}
+
+{% block title %}
+  {% trans "Sliders" context "sliders list page title" %} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-slider{% endblock %}
+
+{% block menu_content_management_header_class %}active{% endblock %}
+{% block menu_slider_class %}active{% endblock %}
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li>
+      <a href="{% url 'dashboard:slider-list' %}" class="breadcrumbs--ellipsed-item">
+        {% trans "Sliders" context "Dashboard slider list" %}
+      </a>
+    </li>
+    <li class="back-mobile">
+      <a href="{% url 'dashboard:slider-list' %}">
+        <svg data-src="{% static 'dashboard/images/arrow-left.svg' %}" fill="#fff" width="20px" height="20px"></svg>
+      </a>
+    </li>
+    <li>
+      <span class="breadcrumbs--ellipsed-item">
+        {{ slider }}
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="row stripes">
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {{ slider.name }}
+          </span>
+          <div class="row">
+            <div class="col s12">
+              <input id="id_default" name="default" class="filled-in green" type="checkbox" {% if slider.is_default %}checked="checked"{% endif %}>
+              <label for="id_default" style="pointer-events:none;">
+                {% trans "Default" context "Slider list table header is active" %}
+              </label>
+            </div>
+            <div class="col s12">
+              <input id="id_active" name="active" class="filled-in green" type="checkbox" {% if slider.is_active %}checked="checked"{% endif %}>
+              <label for="id_active" style="pointer-events:none;">
+                {% trans "Active" context "Slider list table header is active" %}
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="card-action">
+          <a class="btn-flat waves-effect" href="{% url 'dashboard:slider-edit' pk=slider.pk %}">
+            {% trans "Editar" context "Category detail view action" %}
+          </a>
+          <a href="#base-modal" class="btn-flat waves-effect modal-trigger-custom" data-href="{% url 'dashboard:slider-delete' pk=slider.pk %}">
+            {% trans "Eliminar" context "Category detail view action" %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">{% trans "Slides" %}</span>
+        </div>
+
+        <div class="data-table-header-action">
+          <a href="{% url 'dashboard:slide-create' slider_pk=slider.pk %}" class="btn-flat waves-effect">
+            {% trans "Add" %}
+          </a>
+        </div>
+        <div class="data-table-container">
+          <table class="bordered highlight responsive data-table">
+            <thead>
+              <tr>
+                <th class="data-table-icon"></th>
+                <th>{% trans "Miniatura" %}</th>
+                <th>{% trans "Texto alternativo" %}</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="sortable-items" data-post-url="{% url 'dashboard:ajax-reorder-slides' slider_pk=slider.pk %}" data-post-name="ordered_values">
+              {% for slide in slider.slides.all %}
+                <tr class="sortable-item" data-id="{{ slide.pk }}">
+                  <td class="data-table-icon ignore-link sortable__drag-area">
+                    <svg data-src="{% static 'dashboard/images/reorder.svg' %}" height="20" width="20" fill="#000" ></svg>
+                  </td>
+                  <td class="avatar">
+                    <img src="{% get_slide_thumbnail slide size='110x45' method='thumbnail' %}"
+                        srcset="
+                          {% get_slide_thumbnail slide size='110x45' method='thumbnail' %} 1x,
+                          {% get_slide_thumbnail slide size='220x90' method='thumbnail' %} 2x"
+                        alt="{{ slide.alt }}">
+                  </td>
+                  <td>
+                    {{ slide.alt }}
+                  </td>
+                  <td class="right-align">
+                    <a href="{% url 'dashboard:slide-edit' slider_pk=slider.pk slide_pk=slide.pk %}" class="btn-flat waves-effect">
+                      {% trans 'Edit' context 'Attribute value edit action' %}
+                    </a>
+                    <a class="btn-flat waves-effect modal-trigger-custom" href="#base-modal" data-href="{% url 'dashboard:slide-delete' slider_pk=slider.pk slide_pk=slide.pk  %}">
+                      {% trans 'Remove' context 'Attribute value edit action' %}
+                    </a>
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="2">{% trans "No has creado slides para este slider" context "Empty list of attribute values" %}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+version: "2"
+
+services:
+  db:
+    image: library/postgres:11.1-alpine
+    restart: unless-stopped
+    networks:
+      - saleor-backend-tier
+    ports:
+      - 8000:8000
+    volumes:
+      - saleor-db:/var/lib/postgresql
+    environment:
+      - POSTGRES_USER=saleor
+      - POSTGRES_PASSWORD=saleor
+
+  redis:
+    image: library/redis:5.0-alpine
+    restart: unless-stopped
+    networks:
+      - saleor-backend-tier
+    ports:
+      - 6379:6379
+    volumes:
+      - saleor-redis:/data
+
+  search:
+    image: "elasticsearch:6.4.2"
+    restart: unless-stopped
+    networks:
+      - saleor-backend-tier
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - discovery.type=single-node
+
+volumes:
+  saleor-db:
+    driver: local
+  saleor-redis:
+    driver: local
+
+networks:
+  saleor-backend-tier:
+    driver: bridge

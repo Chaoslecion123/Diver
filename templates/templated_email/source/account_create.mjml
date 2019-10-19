@@ -1,0 +1,44 @@
+<mjml>
+  <mj-head>
+    <mj-include path="./shared/styles.mjml" />
+  </mj-head>
+  <mj-body>
+    <mj-raw>
+      {% load i18n %}
+    </mj-raw>
+    <mj-include path="./shared/header.mjml" />
+    <mj-section background-color="#fafafa" padding-bottom="0px">
+      <mj-column padding-bottom="0px">
+        <mj-text align="center" color="#F78322" font-size="24px" line-height="36px" padding-bottom="0px">
+          Bienvenid@
+        </mj-text>
+        <mj-text align="center" color="#424242" font-size="24px" font-weight="600" line-height="36px" padding-top="0px">
+          {{ user_name }}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fafafa">
+      <mj-column>
+        <mj-text color="#424242" font-size="16px" font-weight="600" line-height="24px">
+          ¡Una nueva experiencia!
+        </mj-text>
+        <mj-text color="#424242" font-size="14px" font-weight="600" line-height="21px">
+          Boticas Quimder, ahora es Quimder.com
+        </mj-text>
+        <mj-text color="#424242" font-size="14px" line-height="21px" padding-top="0px">
+          Queremos que todos los peruan@s disfruten de nuestros más de 15 años
+          de experiencia como líder en el mercado de farmacias especializadas
+          en el cuidado de la piel.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fafafa" padding-top="0px">
+      <mj-column>
+        <mj-button href="{{ home_url }}" background-color="#f4811f" color="#fafafa" font-size="14px" line-height="21px" border-radius="4px">
+          ¡Ir a Quimder.com!
+        </mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-include path="./shared/footer.mjml" />
+  </mj-body>
+</mjml>

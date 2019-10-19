@@ -1,0 +1,108 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+{% load mptt_tags %}
+{% load materializecss %}
+{% load static %}
+{% load utils %}
+
+{% block title %}
+  {% trans "Stores" context "Store list page title" %} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-physical-stores{% endblock %}
+
+{% block menu_settings_header_class %}active{% endblock %}
+{% block menu_physical_stores_class %}active{% endblock %}
+
+{% block header_menu %}
+  {{ block.super }}
+{% endblock %}
+
+{% block header_extra %}
+  <div class="btn-fab-fixed">
+    <a href="{% url 'dashboard:physical-store-create' %}" class="btn-fab-default waves-effect waves-light" title="{% trans 'Add physical store' context 'Physical store list add button text' %}">
+      <svg data-src="{% static 'dashboard/images/add.svg' %}"></svg>
+    </a>
+  </div>
+{% endblock %}
+
+
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li class="visible-s">
+      <span>
+        {% trans "Stores" context "Dashboard banners list" %}
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="physical-stores row">
+    <div class="col s12 l9">
+      {% if physical_stores %}
+        <div class="card">
+          <div class="data-table-container">
+            <table class="bordered highlight responsive data-table data-table-description">
+              <thead>
+                <tr>
+                  {% trans "Name" context "Physical store list table header name" as label %}
+                  {% sorting_header 'name' label is_wide=True %}
+                  <th>
+                    {% trans "Glovo" context "Physical store list table header Glovo delivery enabled" %}
+                  </th>
+                  <th>
+                    {% trans "RunningBox" context "Physical store list table header RunningBox delivery enabled" %}
+                  </th>
+                  <th>
+                    {% trans "Main" context "Physical store list table header is main" %}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for physical_store in physical_stores %}
+                  <tr data-action-go="{% url 'dashboard:physical-store-edit' pk=physical_store.pk %}">
+                    <td>
+                      {{ physical_store.name }}
+                    </td>
+                    <td class="nowrap" style="pointer-events:none;">
+                      <input class="filled-in green" type="checkbox" {% if physical_store.glovo_delivery_permission.enabled %}checked="checked"{% endif %}>
+                      <label for="id_{{physical_store.pk}}_is_main"></label>
+                    </td>
+                    <td class="nowrap" style="pointer-events:none;">
+                      <input class="filled-in green" type="checkbox" {% if physical_store.runningbox_delivery_permission.enabled %}checked="checked"{% endif %}>
+                      <label for="id_{{physical_store.pk}}_is_main"></label>
+                    </td>
+                    <td class="nowrap" style="pointer-events:none;">
+                      <input class="filled-in green" type="checkbox" {% if physical_store.is_main_store %}checked="checked"{% endif %}>
+                      <label for="id_{{physical_store.pk}}_is_main"></label>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        {% paginate physical_stores %}
+      {% else %}
+        {% if is_empty %}
+          {% include './zero_page.html' %}
+        {% else %}
+          <div class="col s12">
+            <div class="not-found">
+              <p class="grey-text">
+                {% trans "No store found." context "Empty physical stores list message" %}
+              </p>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% if not is_empty %}
+    <div class="col s12 l3" id="filters">
+      {% filters filter_set %}
+    </div>
+    {% endif %}
+  </div>
+{% endblock %}

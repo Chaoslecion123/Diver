@@ -1,0 +1,138 @@
+{% extends "dashboard/base.html" %}
+{% load i18n %}
+{% load mptt_tags %}
+{% load materializecss %}
+{% load static %}
+{% load utils %}
+
+{% block title %}
+  {% trans "Categories" context "Category list page title" %} - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}body-physical-stores{% endblock %}
+
+{% block menu_settings_header_class %}active{% endblock %}
+{% block menu_physical_stores_class %}active{% endblock %}
+
+{% block header_menu %}
+  {{ block.super }}
+{% endblock %}
+
+{% block header_extra %}
+  {% if physical_store.pk %}
+  <a class="dropdown-button right" href="#" data-activates="physical-store-delete" data-constrainwidth="false">
+    <svg data-src="{% static 'dashboard/images/more-vert.svg' %}" height="24" width="24" ></svg>
+  </a>
+  <ul id="physical-store-delete" class="dropdown-content">
+    <li>
+      <a class="modal-trigger-custom" href="#base-modal" data-href="{% url 'dashboard:physical-store-delete' pk=physical_store.pk %}">
+        {% trans "Remove store" context "Physical store action" %}
+      </a>
+    </li>
+  </ul>
+  {% endif %}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <ul class="breadcrumbs breadcrumbs--history">
+    <li>
+      <a href="{% url 'dashboard:physical-store-list' %}">
+        {% trans "Stores" context "Dashboard physical store list" %}
+      </a>
+    </li>
+    <li class="back-mobile">
+      <a href="{% url 'dashboard:physical-store-list' %}">
+        <svg data-src="{% static 'dashboard/images/arrow-left.svg' %}" fill="#fff" width="20px" height="20px" ></svg>
+      </a>
+    </li>
+    <li>
+      <span class="breadcrumbs--ellipsed-item">
+        {% if physical_store.pk %}
+          {{ physical_store }}
+        {% else %}
+          {% trans "Add store" context "Physical store breadcrumbs" %}
+        {% endif %}
+      </span>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col m12 l9">
+      <div class="card">
+        <form method="post" enctype="multipart/form-data" id="form-sales" novalidate>
+          <div class="card-content card-content-form">
+            {% csrf_token %}
+            {{ physical_store_form.site }}
+
+            {% if physical_store_form.non_field_errors or address_form.non_field_errors %}
+              <blockquote>
+                {% for non_field_error in physical_store_form.non_field_errors %}
+                  {{ non_field_error }}
+                {% endfor %}
+
+                {% for non_field_error in address_form.non_field_errors %}
+                  {{ non_field_error }}
+                {% endfor %}
+              </blockquote>
+            {% endif %}
+
+            <div class="row">
+              {{ physical_store_form.name|materializecss }}
+            </div>
+            <div class="row">
+              {{ physical_store_form.is_main_store|materializecss:"pt-0" }}
+            </div>
+            <div class="row">
+              {{ glovo_delivery_permission_form.glovo_enabled|materializecss:"pt-0" }}
+            </div>
+            <div class="row">
+              {{ runningbox_delivery_permission_form.runningbox_enabled|materializecss:"pt-0" }}
+            </div>
+
+            <span class="card-title">
+              {% trans 'Address' context 'slider form card title: public and default sub form' %}
+            </span>
+
+            <div class="row">
+              {{ address_form.street_address_1|materializecss:"s12 m6" }}
+              {{ address_form.street_address_2|materializecss:"s12 m6" }}
+              {{ address_form.city_area|materializecss:"s12 m6" }}
+              {{ address_form.city|materializecss:"s12 m6" }}
+              {{ address_form.country_area|materializecss:"s12 m6" }}
+              {{ address_form.country|materializecss:"s12 m6" }}
+              {{ address_form.postal_code|materializecss:"s12 m6" }}
+            </div>
+            <div class="row mb-0">
+              {{ address_form.position }}
+            </div>
+          </div>
+
+          <div class="card-action right-align">
+            <a href="{% url 'dashboard:physical-store-list' %}" class="btn-flat waves-effect">
+              {% trans "Cancel" context "Dashboard cancel action" %}
+            </a>
+            {% if physical_store.pk %}
+              <button type="submit" class="btn waves-effect">
+                {% trans "Update" context "Dashboard update action" %}
+              </button>
+            {% else %}
+              <button type="submit" class="btn waves-effect">
+                {% trans "Create" context "Dashboard create action" %}
+              </button>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col m12 l3 help-box"></div>
+  </div>
+{% endblock %}
+
+
+{% block custom_js %}
+{{ block.super }}
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+{{ address_form.media }}
+{% endblock custom_js %}

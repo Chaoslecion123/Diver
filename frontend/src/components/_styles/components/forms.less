@@ -1,0 +1,29 @@
+@import "~components/_styles/themes/default";
+
+@className: ~"@{diver-prefix}-form";
+
+.@{className} {
+  width: 100%;
+  max-width: 400px;
+  .v-progress-linear {
+    margin: 0;
+  }
+
+  .transparent {
+    .v-input__control {
+      .v-input__slot {
+        background: transparent;
+      }
+    }
+  }
+}
+
+.v-dialog--fullscreen {
+  .@{className} {
+    @media screen and (min-width: 600px) {
+      width: 100%;
+      min-width: auto;
+      max-width: auto;
+    }
+  }
+}

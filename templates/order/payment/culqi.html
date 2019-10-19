@@ -1,0 +1,29 @@
+{% extends "order/payment/details.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block stylesheet %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'culqi/waitMe.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'culqi/culqiForm.css' %}" />
+{% endblock stylesheet %}
+
+{% block forms %}
+  <form method="POST" id="payment-form" action="{% if form.action %}{{ form.action }}{% else %}.{% endif %}" novalidate>
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form }}
+    {% if form.errors %}
+      <a class="btn" href="{% url "order:details" token=payment.order.token %}">
+        {% trans "Change payment" context "Payment form (Razorpay) secondary action" %}
+      </a>
+    {% endif %}
+  </form>
+{% endblock forms %}
+
+{% block footer_scripts %}
+  {{ block.super }}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'culqi/waitMe.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'culqi/culqiForm.js' %}"></script>
+{% endblock footer_scripts %}

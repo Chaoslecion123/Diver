@@ -1,0 +1,34 @@
+@import '~components/_styles/themes/default.less';
+
+.d-view {
+    &.d-view-error {
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .application--wrap {
+            min-height: auto;
+            flex: initial;
+        }
+        .d-view-error__image {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 0 auto 2rem;
+        }
+        .d-view-error__message {
+            text-align: center;
+            .v-btn {
+                margin-top: 4 * @size-unit;
+
+                .fa-icon {
+                    top: 0.5rem;
+                    margin-right: 0.5rem;
+                    height: 14px;
+                    width: 14px;
+                }
+            }
+        }
+    }
+}

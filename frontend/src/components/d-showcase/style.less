@@ -1,0 +1,30 @@
+@keyframes scene-pin-animation {
+    0% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(0.8);
+    }
+    100% {
+    transform: scale(1);
+    }
+}
+
+.d-showcase {
+    width: 100%;
+    padding: 0 4px;
+
+    .d-scene {
+        padding: 8px 4px;
+        position: relative;
+
+        .d-scene-pin {
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        .d-scene-pin__marker {
+            animation: scene-pin-animation 1.75s infinite;
+        }
+    }
+}

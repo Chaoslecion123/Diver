@@ -1,0 +1,27 @@
+{% extends "dashboard/base_modal.html" %}
+
+{% load i18n %}
+
+{% block form_class %}{% endblock %}
+
+{% block action_url %}
+  {% url "dashboard:scene-delete" pk=scene.pk %}
+{% endblock %}
+
+{% block title %}
+  {% blocktrans trimmed context "Modal remove scene text" %}
+    Delete scene {{ scene }}
+  {% endblocktrans %}
+{% endblock title %}
+
+{% block content %}
+  <div class="col s12">
+    {% blocktrans trimmed context "Modal remove scene text" %}
+      Are you sure you want to remove scene <strong>{{ scene }}</strong>?
+    {% endblocktrans %}
+  </div>
+{% endblock content %}
+
+{% block primary_action %}
+  {% trans "Remove" context "Dashboard delete action" %}
+{% endblock %}
